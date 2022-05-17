@@ -1,0 +1,108 @@
+
+truncate
+[:: caiyun ::]
+请注意，这是一个截短的快速启动指南。
+---------------
+
+Note that this is a very truncated quick-start guide.
+
+overview
+pique
+versatility
+[:: caiyun ::]
+我们希望这个快速的概述能激起你对 Maven 的通用性的兴趣。
+---------------
+
+We hope this quick overview has piqued your interest in the versatility of Maven.
+
+
+Conclusion
+[:: caiyun ::]
+总结
+---------------
+
+Conclusion
+
+beyond
+[:: caiyun ::]
+除了上面的默认列表，还有另外两个 Maven 的生命周期。
+---------------
+
+There are two other Maven lifecycles of note beyond the default list above.
+
+specific    dependant
+[:: caiyun ::]
+每个阶段执行的具体目标取决于项目的打包类型。
+---------------
+
+The specific goals executed per phase is dependant upon the packaging type of the project.
+
+verify		valid 		meets quality criteria
+[:: caiyun ::]
+验证: 运行任何检查，以验证包是有效的，并满足质量标准
+---------------
+
+verify: run any checks to verify the package is valid and meets quality criteria
+
+comprehensive
+[:: caiyun ::]
+尽管很难说是一个全面的列表，但这些是执行的最常见的缺省生命周期阶段。
+---------------
+
+Although hardly a comprehensive list, these are the most common default lifecycle phases executed.
+
+validate
+[:: caiyun ::]
+验证
+---------------
+
+validate
+
+phase
+[:: caiyun ::]
+这不是一个目标，而是一个阶段。
+---------------
+
+Rather than a goal, this is a phase.
+
+deal with various jboss items
+[:: caiyun ::]
+例如 jboss-maven-plugin，其目的是“处理各种 jboss 条目”。
+---------------
+
+For example the jboss-maven-plugin, whose purpose is &quot;deal with various jboss items&quot;.
+
+Suffice
+[:: caiyun ::]
+现在可以说，一个插件是一个具有一般共同目标的目标集合。
+---------------
+
+Suffice it to say for now that a plugin is a collection of goals with a general common purpose.
+
+be familiar with
+as similar to
+conceive
+[:: caiyun ::]
+如果您熟悉 Ant，您可能会认为这与任务类似。
+---------------
+
+If you are familiar with Ant, you may conceive of this as similar to a task.
+
+daunting 
+complexity
+intricacy
+just yet
+effectively
+[:: caiyun ::]
+POM 非常庞大，其复杂性可能令人望而生畏，但是要有效地使用它，不需要这会儿就理解所有的复杂性。
+---------------
+
+The POM is huge and can be daunting in its complexity, but it is not necessary to understand all of the intricacies just yet to use it effectively.
+
+
+maintenance
+[:: caiyun ::]
+停止维护
+---------------
+
+Out of maintenance

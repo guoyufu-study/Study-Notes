@@ -1,0 +1,177 @@
+
+
+versus
+
+与……相对，与……相比
+
+particularly
+[:: caiyun ::]
+，特别是有关
+---------------
+
+particularly the discussion of
+
+justify
+[:: caiyun ::]
+Apache Commons Lang，一个 Java 实用工具类的包，用于 Java.Lang 的层次结构中的类，或者被认为非常标准,以至于可以证明 Java.Lang 中的存在。
+---------------
+
+
+Apache Commons Lang, a package of Java utility classes for the classes that are in java.lang&#39;s hierarchy, or are considered to be so standard as to justify existence in java.lang.
+
+schedule
+[:: caiyun ::]
+此版本的特性和时间表是通过 JEP 进程提出和跟踪的，JEP 2.0提案对其进行了修正。
+---------------
+
+The features and schedule of this release were proposed and tracked via the JEP Process, as amended by the JEP 2.0 proposal.
+
+consistently
+[:: caiyun ::]
+通过这一更改，依赖于默认字符集的 api 将在所有实现、操作系统、区域设置和配置中表现一致。
+---------------
+
+With this change, APIs that depend on the default charset will behave consistently across all implementations, operating systems, locales, and configurations.
+
+inclusion
+[:: caiyun ::]
+在 JavaDoc 的标准 Doclet 中添加了一个@snippet 标记，简化了 API 文档中示例源代码的包含。
+---------------
+
+A @snippet tag is added to JavaDoc&#39;s Standard Doclet, which simplifies the inclusion of example source code in API documentation.
+
+prototype
+[:: caiyun ::]
+这个工具对原型设计和测试非常有用。
+---------------
+
+This tool is useful for prototyping and testing.
+
+be familiar with
+[:: caiyun ::]
+如果您正在从 JDK 8迁移，您还应该熟悉 JDK 8和后续版本之间的区别，这些区别在从 JDK 8迁移到后续 JDK 版本中有描述。
+---------------
+
+If you are migrating from JDK 8, you should also be familiar with the differences between JDK 8 and later releases that are described in Migrating From JDK 8 to Later JDK Releases.
+
+beyond
+[:: caiyun ::]
+如果您要升级到 JDK 17或更高版本，请参见 Default Charset。
+---------------
+
+See Default Charset if you are upgrading to JDK 17 and beyond.
+
+significant
+enhancement
+[:: caiyun ::]
+该指南强调了 JDK 18中所做的重大改变和增强。
+---------------
+
+The guide highlights the significant changes and enhancements done in JDK 18.
+
+pertain
+[:: caiyun ::]
+有关此版本的其他信息，请参阅发行说明。
+---------------
+
+See the Release Notes for additional information pertaining to this release.
+
+emphasis
+[:: caiyun ::]
+这个文档提供了 API 的简要描述，强调了规范，而不是代码示例
+---------------
+
+This documentation provides brief descriptions of the API with an emphasis on specifications, not on code examples
+
+a download bundle
+[:: caiyun ::]
+Javase 文档也可以在一个下载包中获得，您可以将其安装到您的机器上。
+---------------
+
+The Java SE documentation is also available in a download bundle which you can install on your machine.
+
+locate
+[:: caiyun ::]
+安装说明位于 javase 文档站点上。
+---------------
+
+Installation instructions are located on the Java SE documentation site.
+
+Copyright and License Terms for Documentation
+[:: caiyun ::]
+文档的版权和许可条款
+---------------
+
+Copyright and License Terms for Documentation
+
+submit
+[:: caiyun ::]
+提交错误报告和可用的支持选项
+---------------
+
+Submitting a Bug Report and Available Support Options
+
+specific 
+[:: caiyun ::]
+JDK 18 Guides and Reference Documentation-显示一个页面，其中包含到用户指南、故障排除信息以及从以前版本的 JDK 迁移的用户感兴趣的特定信息的链接。
+---------------
+
+JDK 18 Guides and Reference Documentation - Displays a page containing links to the user guides, troubleshooting information, and specific information of interest to users moving from previous versions of the JDK.
+
+a feature release
+[:: caiyun ::]
+Java 平台，标准版18开发工具包(JDK 18)是 Java SE 平台的一个特性版本。
+---------------
+
+The Java Platform, Standard Edition 18 Development Kit (JDK 18) is a feature release of the Java SE platform.
+
+individual
+[:: caiyun ::]
+加载它比加载每个发行版的单个发行说明页面花费更长的时间。
+---------------
+
+Loading it takes longer than loading the individual release note pages of each release.
+
+General Availability
+[:: caiyun ::]
+这个页面提供了所有 JDK 18 的通用可用性(General Availability，GA)发行说明的链接。
+---------------
+
+This page provides links to all of the release notes for General Availability (GA) releases of JDK 18.
+
+Certification
+[:: caiyun ::]
+Oracle Java SE 培训和认证
+---------------
+
+Oracle Java SE Training and Certification
+
+Press Release
+[:: caiyun ::]
+新闻稿
+---------------
+
+Press Release
+
+performance
+versatility
+portability
+[:: caiyun ::]
+Java 提供了丰富的用户接口、性能、通用性、可移植性和当今应用程序所需的安全性。
+---------------
+
+Java offers the rich user interface, performance, versatility, portability, and security that today&#39;s applications require.
+
+at a Glance
+[:: caiyun ::]
+Java SE 一览
+---------------
+
+Java SE at a Glance
+
+collaborate
+[:: caiyun ::]
+在 Java 平台、标准版和相关项目的开源实现上进行协作的场所。
+---------------
+
+The place to collaborate on an open-source implementation of the Java Platform, Standard Edition, and related projects.

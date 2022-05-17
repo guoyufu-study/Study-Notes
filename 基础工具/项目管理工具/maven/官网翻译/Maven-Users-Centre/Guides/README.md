@@ -1,0 +1,17 @@
+## Maven 迷你指南
+
+- [配置可重现的构建](基础工具/项目管理工具/maven/官网翻译/Maven-Users-Centre/Guides/guide-reproducible-builds.md)
+- [创建装配体](基础工具/项目管理工具/maven/官网翻译/Maven-Users-Centre/Guides/guide-assemblies.md)
+- [配置存档插件](https://maven.apache.org/guides/mini/guide-archive-configuration.html)
+- [配置 Maven](基础工具/项目管理工具/maven/官网翻译/Maven-Users-Centre/Guides/guide-configuring-maven.md)
+- [生成源](https://maven.apache.org/guides/mini/guide-generating-sources.html)
+- [使用清单](https://maven.apache.org/guides/mini/guide-manifest.html)
+- [Maven 类加载](https://maven.apache.org/guides/mini/guide-maven-classloading.html)
+- [在构建中使用多个模块](https://maven.apache.org/guides/mini/guide-multiple-modules.html)
+- [使用发布插件](https://maven.apache.org/guides/mini/guide-releasing.html)
+- [在 Maven 中使用 Ant](https://maven.apache.org/guides/mini/guide-using-ant.html)
+- [使用模型](https://maven.apache.org/guides/mini/guide-using-modello.html)
+- [使用扩展](https://maven.apache.org/guides/mini/guide-using-extensions.html)
+- [使用 Maven 2 构建不同的环境](https://maven.apache.org/guides/mini/guide-building-for-different-environments.html)
+- [使用工具链](https://maven.apache.org/guides/mini/guide-using-toolchains.html)
+- [通过 settings.xml 注入 POM 属性](https://maven.apache.org/examples/injecting-properties-via-settings.html)

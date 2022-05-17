@@ -1,0 +1,6 @@
+appropriate
+[:: caiyun ::]
+要使用 Spring Boot Maven Plugin，请在 pom.XML 的 plugins 部分中包含适当的 XML，如下面的示例所示:
+---------------
+
+To use the Spring Boot Maven Plugin, include the appropriate XML in the plugins section of your pom.xml, as shown in the following example:

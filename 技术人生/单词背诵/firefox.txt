@@ -1,0 +1,30 @@
+
+donation
+[:: caiyun ::]
+捐款
+---------------
+
+Donations
+
+port
+[:: caiyun ::]
+加入一个开发者的国际社区。每一步都得到支持。而且，当您首先构建 Firefox 时，很容易将扩展插件移植到其他浏览器上，从而节省了宝贵的开发时间。
+---------------
+
+Join an international community of developers. Be supported every step of the way. And, when you build for Firefox first, it’s easy to port your extension to other browsers, saving you valuable development time.
+
+
+Get your great idea into the hands of millions of Firefox users.
+[:: caiyun ::]
+让成千上万的 Firefox 用户拥有你的好点子。
+---------------
+
+Get your great idea into the hands of millions of Firefox users. 
+
+
+innovation
+[:: baidu ::]
+无论您是在开始扩展开发、准备启动创新，还是在开发定制的企业解决方案，您都会找到所需的资源。
+---------------
+
+You’ll find the resources you need, whether you’re getting started with extension development, preparing to launch your innovation, or developing a custom enterprise solution.

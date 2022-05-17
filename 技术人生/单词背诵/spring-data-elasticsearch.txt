@@ -1,0 +1,23 @@
+
+boilerplate 样板文件；引用
+[:: caiyun ::]
+Spring Data 存储库抽象的目标是显著减少为各种持久性存储实现数据访问层所需的样板代码量。
+---------------
+
+The goal of the Spring Data repository abstraction is to significantly reduce the amount of boilerplate code required to implement data access layers for various persistence stores.
+
+umbrella 雨伞；综合体，总体；
+consistent 一致的
+[:: caiyun ::]
+Spring Data for Elasticsearch 是 Spring Data 项目的一部分，该项目旨在为新数据存储提供一个熟悉和一致的基于 Spring 的编程模型，同时保留存储特定的特性和功能。
+---------------
+
+Spring Data for Elasticsearch is part of the umbrella Spring Data project which aims to provide a familiar and consistent Spring-based programming model for new datastores while retaining store-specific features and capabilities.
+
+visualize
+intuitive 
+[:: caiyun ::]
+要使用直观的 UI 分析、可视化和管理 Elasticsearch 数据，请安装 Kibana。
+---------------
+
+To analyze, visualize, and manage Elasticsearch data using an intuitive UI, install Kibana.

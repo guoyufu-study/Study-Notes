@@ -1,0 +1,182 @@
+
+leverage
+[:: caiyun ::]
+使用运行在 wsl2上的 Docker Desktop，用户可以利用 Linux 工作区，避免同时维护 Linux 和 Windows 构建脚本。
+---------------
+
+With Docker Desktop running on WSL 2, users can leverage Linux workspaces and avoid having to maintain both Linux and Windows build scripts.
+
+architectural
+[:: caiyun ::]
+Windows 子系统 for Linux (WSL)2引入了一个重大的体系结构变化，因为它是由微软构建的完整的 Linux 内核，允许 Linux 容器在没有仿真的情况下本地运行。
+---------------
+
+Windows Subsystem for Linux (WSL) 2 introduces a significant architectural change as it is a full Linux kernel built by Microsoft, allowing Linux containers to run natively without emulation.
+
+terms
+[:: caiyun ::]
+更新到 Docker Desktop 条款
+---------------
+
+Update to the Docker Desktop terms
+
+The grace period
+[:: caiyun ::]
+对于那些需要付费订阅的用户，宽限期在2022年1月31日结束。
+---------------
+
+The grace period for those that will require a paid subscription ends on January 31, 2022.
+
+erroneously
+[:: caiyun ::]
+您可能需要在 ~/.bashrc 或 ~/.profile 等文件中编辑您的环境，以防止 DOCKER_HOST 变量被错误地设置。
+---------------
+
+You may need to edit your environment in files such as ~/.bashrc or ~/.profile to prevent the DOCKER_HOST variable from being set erroneously.
+
+If steps are not taken to secure the connection, it is possible for remote non-root users to gain root access on the host.
+[:: caiyun ::]
+如果不采取步骤来保护连接，则远程非root用户可以在主机上获得root访问权限。有关如何使用 TLS 证书保护此连接的详细信息，请参阅本文中关于如何保护 Docker 守护进程套接字的内容。
+---------------
+
+If steps are not taken to secure the connection, it is possible for remote non-root users to gain root access on the host. For more information on how to use TLS certificates to secure this connection, check this article on how to protect the Docker daemon socket.
+
+implication
+[:: caiyun ::]
+在配置 Docker 以接受来自远程主机的连接之前，了解将 Docker 打开到网络的安全性含义至关重要。
+---------------
+
+Before configuring Docker to accept connections from remote hosts it is critically important that you understand the security implications of opening docker to the network.
+
+critically
+[:: caiyun ::]
+在配置 Docker 以接受来自远程主机的连接之前，了解将 Docker 打开到网络的安全性含义至关重要。
+---------------
+
+Before configuring Docker to accept connections from remote hosts it is critically important that you understand the security implications of opening docker to the network.
+
+alleviate
+[:: caiyun ::]
+为了缓解这些问题，可以配置 json-file 日志记录驱动程序以启用日志旋转，可以使用其他日志记录驱动程序，如默认执行日志旋转的“本地”日志记录驱动程序，或者使用将日志发送到远程日志聚合程序的日志记录驱动程序。
+---------------
+
+To alleviate such issues, either configure the json-file logging driver to enable log rotation, use an alternative logging driver such as the “local” logging driver that performs log rotation by default, or use a logging driver that sends logs to a remote logging aggregator.
+
+exhaustion
+[:: caiyun ::]
+随着时间的推移，这些日志文件的大小会不断扩大，导致潜在的磁盘资源耗尽。
+---------------
+
+Over time, these log files expand in size, leading to potential exhaustion of disk resources.
+
+impact
+[:: caiyun ::]
+有关这如何影响系统安全性的详细信息，请参阅 Docker Daemon Attack Surface。
+---------------
+
+For details on how this impacts security in your system, see Docker Daemon Attack Surface.
+
+indicates
+[:: caiyun ::]
+如消息所示，非根用户默认情况下不能运行 Docker 命令。
+---------------
+
+As the message indicates, non-root users cannot run Docker commands by default.
+
+outdated
+[:: caiyun ::]
+当使用脚本更新现有安装时，依赖项可能不会更新到预期的版本，导致使用过时的版本。
+---------------
+
+When using the script to update an existing installation, dependencies may not be updated to the expected version, causing outdated versions to be used.
+
+Always test (major) upgrades in a test environment before deploying to your production systems.
+[:: caiyun ::]
+在部署到生产系统之前，始终在测试环境中进行测试(主要)升级。
+---------------
+
+Always test (major) upgrades in a test environment before deploying to your production systems.
+
+distribution
+[:: caiyun ::]
+该脚本试图检测您的 Linux 发行版和版本，并为您配置包管理系统，并且不允许您自定义大多数安装参数。
+---------------
+
+The script attempts to detect your Linux distribution and version and configure your package management system for you, and does not allow you to customize most installation parameters.
+
+limitation
+[:: caiyun ::]
+在安装之前，让自己熟悉这个便利脚本的潜在风险和局限性:
+---------------
+
+Before installing, make yourself familiar with potential risks and limitations of the convenience script:
+
+examine
+[:: caiyun ::]
+在本地运行脚本之前，始终检查从互联网上下载的脚本。
+---------------
+
+Always examine scripts downloaded from the internet before running them locally.
+
+Also refer to
+[:: caiyun ::]
+另请参阅使用存储库步骤进行安装，以了解使用包存储库进行安装的安装步骤。
+---------------
+
+Also refer to the install using the repository steps to learn about installation steps to install using the package repository.
+
+tailored
+[:: caiyun ::]
+不建议在生产环境中使用方便脚本，但可以作为示例创建根据需要定制的配置脚本。
+---------------
+
+The convenience script is not recommended for production environments, but can be used as an example to create a provisioning script that is tailored to your needs.
+
+provision
+[:: caiyun ::]
+不建议在生产环境中使用方便脚本，但可以作为示例创建根据需要定制的配置脚本。
+---------------
+
+The convenience script is not recommended for production environments, but can be used as an example to create a provisioning script that is tailored to your needs.
+
+hyphen
+[:: caiyun ::]
+通过其完全限定的包名安装特定版本，该名称是包名(docker-ce)加上从第一个冒号(:)开始直到第一个连字符的版本字符串(第2列) ，中间用连字符(-)分隔。
+---------------
+
+Install a specific version by its fully qualified package name, which is the package name (docker-ce) plus the version string (2nd column) starting at the first colon (:), up to the first hyphen, separated by a hyphen (-).
+
+appropriate
+[:: caiyun ::]
+如果启用了多个 Docker 存储库，在 yum install 或 yum update 命令中安装或更新时不指定版本，那么总是安装尽可能高的版本，这可能不适合您的稳定性需求。
+---------------
+
+If you have multiple Docker repositories enabled, installing or updating without specifying a version in the yum install or yum update command always installs the highest possible version, which may not be appropriate for your stability needs.
+
+Afterward
+[:: caiyun ::]
+之后，您可以从存储库中安装和更新 Docker。
+---------------
+
+Afterward, you can install and update Docker from the repository.
+
+convenience
+[:: caiyun ::]
+在测试和开发环境中，一些用户选择使用自动化的便利脚本来安装 Docker。
+---------------
+
+In testing and development environments, some users choose to use automated convenience scripts to install Docker.
+
+ease
+[:: caiyun ::]
+大多数用户建立了 Docker 的存储库并从中安装，以便于安装和升级任务。
+---------------
+
+Most users set up Docker’s repositories and install from them, for ease of installation and upgrade tasks.
+
+preserve
+[:: caiyun ::]
+保留/var/lib/docker/的内容，包括图像、容器、卷和网络。
+---------------
+
+The contents of /var/lib/docker/, including images, containers, volumes, and networks, are preserved.
