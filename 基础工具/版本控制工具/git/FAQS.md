@@ -1,20 +1,5 @@
 # FAQS 常见问答
 
-## 作者身份不明
-
-![作者未知](images/Author-identity-unknown.jpg)
-
-根据提示进行配置
-
-``` powershell
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
-```
-
-比如，我的邮箱 `guoyufu_study@163.com` ，用户名 `guoyufu-study`。
-
-
-
 ## 路径中文字符
 
 在 git bash 中，执行  `git status` 命令，文件路径中的中文全部显示为数字，像这样：
@@ -52,6 +37,21 @@ git config --global core.longpaths true
 ```
 
 即可。
+
+## 作者身份不明
+
+![作者未知](images/Author-identity-unknown.jpg)
+
+根据提示进行配置
+
+``` powershell
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+```
+
+比如，我的邮箱 `guoyufu_study@163.com` ，用户名 `guoyufu-study`。
+
+
 
 ## 每次 pull 都要输入账号密码
 
