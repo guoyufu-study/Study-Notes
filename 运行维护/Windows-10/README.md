@@ -1,5 +1,6 @@
 # Window 10
 
+* [从零开始安装](运行维护/Windows-10/从零开始安装.md)：列举要安装的软件。
 * [Windows 终端](运行维护/Windows-10/Windows-Terminal.md)：一个面向命令行工具和 shell 用户的新式终端应用程序
 * [批处理](运行维护/Windows-10/批处理/)
 * [PowerShell](运行维护/Windows-10/PowerShell.md)：一种跨平台的任务自动化解决方案。
