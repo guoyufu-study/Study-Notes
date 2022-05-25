@@ -13,7 +13,7 @@ v2.35.1
 ## 设置和配置
 
 * [git](基础工具/版本控制工具/git/文档/参考手册/git.md)
-* config
+* [config](基础工具/版本控制工具/git/文档/参考手册/git-config.md)
 * help
 * bugreport
 

@@ -17,4 +17,4 @@
   * [Atom](基础工具/文本编辑器/Atom/)
   * [marktext](基础工具/文本编辑器/marktext/) 替代 Typora
   
-  ![markdown编辑器](G:\文档工具\docsify\study-notes\基础工具\markdown.png)
+  ![markdown编辑器](markdown.png)
