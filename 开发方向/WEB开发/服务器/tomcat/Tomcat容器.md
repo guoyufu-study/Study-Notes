@@ -1,10 +1,41 @@
-# Tomcat 容器 <small>9.0.x</small>
+# Tomcat 容器
+
+> https://tomcat.apache.org/
 
 ## 选择并下载
 
-官网：https://tomcat.apache.org/
+通过 [which version](开发方向/WEB开发/服务器/tomcat/Download/which-version.md) 中的说明选择版本，并下载。比如，选择 `tomcat 8.5.x`。
 
-通过 [which version](https://tomcat.apache.org/whichversion.html) 中的说明选择版本，并下载。
+安装 JDK 11，验证。
+
+``` bash
+java --version
+```
+
+下载并安装 `tomcat 8.5.x`。
+
+> https://tomcat.apache.org/download-80.cgi
+
+``` bash
+curl -O https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.81/bin/apache-tomcat-8.5.81.tar.gz
+curl -O https://downloads.apache.org/tomcat/tomcat-8/v8.5.81/bin/apache-tomcat-8.5.81.tar.gz.asc
+```
+
+[验证](https://www.apache.org/info/verification.html) 下载文件的完整性
+
+``` bash
+pgp --verify apache-tomcat-8.5.81.tar.gz.asc apache-tomcat-8.5.81.tar.gz
+gpg --keyserver pgpkeys.mit.edu --recv-key A53CA458
+pgp --verify apache-tomcat-8.5.81.tar.gz.asc apache-tomcat-8.5.81.tar.gz
+```
+
+解压缩安装
+
+``` bash
+tar -zxvf apache-tomcat-8.5.81.tar.gz
+```
+
+
 
 ## 配置文件
 
