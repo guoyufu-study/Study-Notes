@@ -479,6 +479,34 @@ Git 管道和瓷器(the Git plumbing and the porcelains)都使用配置变量。
 
 要完全选择退出此安全检查，请将 `safe.directory` 设置为字符串 `*`。这将允许将所有存储库视为它们的目录列在 `safe.directory` 列表中。如果在系统配置中设置了 `safe.directory=*`，并且您希望重新启用这个保护，那么在列出您认为安全的存储库之前，用一个空值初始化您的列表。
 
+#### TODO
+
+
+
+#### `user.name`
+
+#### `user.email`
+
+#### `author.name`
+
+#### `author.email`
+
+#### `committer.name`
+
+#### `committer.email`
+
+`user.name` 和 `user.email`变量决定了提交对象的 `author` 和 `committer` 字段中的内容。如果您需要 `author` 或 `committer` 不同， 可以设置 `author.name`、`author.email`、`committer.name` 或 `committer.email` 变量。此外，所有这些都可以被 `GIT_AUTHOR_NAME`、 `GIT_AUTHOR_EMAIL`、`GIT_COMMITTER_NAME`、`GIT_COMMITTER_EMAIL` 和  `EMAIL` 环境变量覆盖。
+
+请注意，这些变量的 `name` 形式通常指的是某种形式的个人姓名。有关这些设置和选项的更多信息，请参阅 [git-commit(1)](git-commit.html) 和 [git(1)](git.html) 的环境变量部分，如果您正在寻找身份验证凭据，请参阅 `credential.username`。
+
+#### `user.useConfigOnly`
+
+指示 Git 避免尝试猜测 `user.email` 和 `user.name` 的默认值，而是仅从配置中检索值。例如，如果您有多个电子邮件地址并且想为每个存储库使用不同的电子邮件地址，那么在全局配置中将此配置选项设置为 `true` ，连同名称一起，Git 会在进行新提交之前提示您在新克隆的存储库中设置电子邮件地址。默认为`false`。
+
+#### `user.signingKey`
+
+如果 [git-tag(1)](git-tag.html) 或 [git-commit(1)](git-commit.html) 在创建签名标签或提交时没有选择您希望它自动选择的密钥，您可以使用此变量覆盖默认选择。该选项原封不动地传递给 gpg 的 --local-user 参数，因此您可以使用 gpg 支持的任何方法指定密钥。如果 gpg.format 设置为`ssh`这可以包含您的私有 ssh 密钥或使用 ssh-agent 时的公共密钥的路径。或者，它可以包含一个带有前缀的公钥`key::` 直接（例如：“key::ssh-rsa XXXXXX 标识符”）。私钥需要通过 ssh-agent 提供。如果未设置，git 将调用 gpg.ssh.defaultKeyCommand（例如：“ssh-add -L”）并尝试使用第一个可用的密钥。为了向后兼容，以“ssh-”开头的原始密钥，例如“ssh-rsa XXXXXX identifier”，被视为“key::ssh-rsa XXXXXX identifier”，但这种形式已被弃用；改用`key::`表格。
+
 #### web.browser 
 
 > https://git-scm.com/docs/git-config#Documentation/git-config.txt-webbrowser

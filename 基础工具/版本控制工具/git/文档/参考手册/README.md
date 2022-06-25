@@ -24,10 +24,10 @@ v2.35.1
 
 ## 基本快照
 
-* add
+* [add](基础工具/版本控制工具/git/文档/参考手册/git-add.md)
 * status
 * diff
-* commit
+* [commit](基础工具/版本控制工具/git/文档/参考手册/git-commit.md)
 * notes
 * restore
 * reset
