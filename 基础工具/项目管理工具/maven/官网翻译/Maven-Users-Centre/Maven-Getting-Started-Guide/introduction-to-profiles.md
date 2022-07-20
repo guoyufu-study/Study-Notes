@@ -1,12 +1,14 @@
 ## 介绍构建 profiles
 
+> https://maven.apache.org/guides/introduction/introduction-to-profiles.html
+
 Apache Maven 竭尽全力确保构建是可移植的。除其他外，这意味着允许在 POM 中进行构建配置，避免**所有**文件系统引用（在继承、依赖项和其他地方），并更加依赖本地存储库来存储实现这一点所需的元数据。
 
 然而，有时可移植性并非完全可行。在某些情况下，插件可能需要配置本地文件系统路径。在其他情况下，将需要稍微不同的依赖集，并且项目的工件名称可能需要稍微调整。在其他时候，您甚至可能需要在构建生命周期中包含整个插件，具体取决于检测到的构建环境。
 
-为了解决这些情况，Maven 支持构建配置文件。配置文件是使用 POM 本身中可用元素的子集（加上一个额外的部分）指定的，并以多种方式中的任何一种触发。它们在构建时修改 POM，旨在用于互补集，为一组目标环境提供等效但不同的参数（例如，在开发、测试和生产环境）。因此，配置文件很容易导致团队中不同成员的不同构建结果。但是，如果使用得当，可以使用配置文件，同时仍然保持项目的可移植性。这也将最大限度地减少使用`-f`maven 的选项，它允许用户创建另一个具有不同参数或配置的 POM 来构建，这使得它更易于维护，因为它仅使用一个 POM 运行。
+为了解决这些情况，Maven 支持构建 profiles。Profiles 是使用 POM 本身中可用元素的子集（加上一个额外的部分）指定的，并以多种方式中的任何一种触发。它们在构建时修改 POM，旨在用于互补集，为一组目标环境提供等效但不同的参数（例如，提供开发、测试和生产环境中的 appserver 根的路径）。因此，profiles 很容易导致团队中不同成员的不同构建结果。但是，如果使用得当，可以使用 profiles ，同时仍然保持项目的可移植性。这也将最大限度地减少使用 maven 的 `-f` 选项，它允许用户创建另一个具有不同参数或配置的 POM 来构建，这使得它更易于维护，因为它仅使用一个 POM 运行。
 
-### 有哪些不同类型的配置文件？每个定义在哪里？
+### 有哪些不同类型的 profile？每个定义在哪里？
 
 - 每个项目
   
@@ -24,9 +26,9 @@ Apache Maven 竭尽全力确保构建是可移植的。除其他外，这意味�
   
   - 位于[项目 basedir`(profiles.xml)`](https://maven.apache.org/ref/2.2.1/maven-profile/profiles.html)中的描述符（Maven 3.0 及更高版本不再支持；请参阅[Maven 3 兼容性说明](https://cwiki.apache.org/confluence/display/MAVEN/Maven+3.x+Compatibility+Notes#Maven3.xCompatibilityNotes-profiles.xml)）
 
-### 如何触发配置文件？这如何根据所使用的配置文件类型而变化？
+### 如何触发 profile？这如何根据所使用的 profile 类型而变化？
 
-可以通过多种方式激活配置文件：
+可以通过多种方式激活 profile：
 
 - 从命令行
 - 通过 Maven 设置
@@ -34,73 +36,187 @@ Apache Maven 竭尽全力确保构建是可移植的。除其他外，这意味�
 - 操作系统设置
 - 存在或丢失文件
 
-#### 有关个人资料激活的详细信息
+#### 有关 profile 激活的详细信息
 
-可以使用`-P`命令行标志显式指定配置文件。
+可以使用 `-P` 命令行标志显式指定 profiles。
 
-此标志后跟要使用的配置文件 ID 的逗号分隔列表。选项中指定的配置文件除了通过其激活配置或`<activeProfiles>`. `settings.xml`从 Maven 4 开始，Maven 将拒绝激活或停用无法解析的配置文件。为防止这种情况，请在配置文件标识符前加上`?`，将其标记为可选：
+此标志后跟要使用的 profile IDs 的逗号分隔列表。选项中指定的 profile(s) 与通过其激活配置或 `settings.xml` 中的 `<activeProfiles>` 部分激活的 profiles 一起被激活。从 Maven 4 开始，Maven 将拒绝激活或停用无法解析的 profile。为防止这种情况，请在 profile 标识符前加上`?`，将其标记为可选：
 
+``` 
+mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
+```
 
+可以在 Maven 设置中通过 `<activeProfiles>` 部分激活 Profiles 。本节采用一个 `<activeProfile>` 元素列表，每个元素都包含一个 profile-id。
 
-可以在 Maven 设置中通过该`<activeProfiles>`部分激活配置文件。本节采用一个`<activeProfile>`元素列表，每个元素都包含一个 profile-id。
+``` xml
+<settings>
+    ...
+    <activeProfiles>
+        <activeProfile>profile-1</activeProfile>
+    </activeProfiles>
+    ...
+</settings>
+```
 
+每次项目使用它时，默认情况下都会激活 `<activeProfiles>` 标签中列出的 profiles。
 
+可以根据检测到的构建环境状态自动触发 Profiles 。这些触发器是通过 profile 本身的一个 `<activation>` 部分指定的。目前，此检测仅限于 JDK 版本的前缀匹配、系统属性的存在或系统属性的值。这里有些例子。
 
-`<activeProfiles>`每次项目使用时，默认情况下都会激活标签中列出的配置文件。
+以下配置将在 JDK 的版本以 “1.4” 开头时触发 profile（例如“1.4.0_08”、“1.4.2_07”、“1.4”）：
 
-可以根据检测到的构建环境状态自动触发配置文件。这些触发器是通过`<activation>`配置文件本身的一个部分指定的。目前，此检测仅限于 JDK 版本的前缀匹配、系统属性的存在或系统属性的值。这里有些例子。
+``` xml
+<profiles>
+    <profile>
+        <activation>
+            <jdk>1.4</jdk>
+        </activation>
+        ...
+    </profile>
+</profiles>
+```
 
-以下配置将在 JDK 的版本以“1.4”开头时触发配置文件（例如“1.4.0_08”、“1.4.2_07”、“1.4”）：
+从 Maven 2.1 开始也可以使用范围（有关更多信息，请参阅 [Enforcer 版本范围语法](https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html)）。以下为版本 1.3、1.4 和 1.5。
 
+``` xml
+<profiles>
+    <profile>
+        <activation>
+            <jdk>[1.3,1.6)</jdk>
+        </activation>
+        ...
+    </profile>
+</profiles>
+```
 
+*注意：*上限 `,1.5]` 可能不包括 1.5 的大多数版本，因为它们将有一个额外的“补丁”版本，例如 `_05` 上述范围内未考虑的版本。
 
+下一个将根据操作系统设置激活。有关操作系统值的更多详细信息，请参阅 [Maven Enforcer 插件](https://maven.apache.org/enforcer/enforcer-rules/requireOS.html)。
 
+``` xml
+<profiles>
+    <profile>
+        <activation>
+            <os>
+                <name>Windows XP</name>
+                <family>Windows</family>
+                <arch>x86</arch>
+                <version>5.1.2600</version>
+            </os>
+        </activation>
+        ...
+    </profile>
+</profiles>
+```
 
-从 Maven 2.1 开始也可以使用范围（有关更多信息，请参阅[Enforcer 版本范围语法](https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html)）。以下荣誉版本 1.3、1.4 和 1.5。
+当系统属性 “debug” 被指定为任何值时，下面的 profile 将被激活：
 
+``` xml
+<profiles>
+    <profile>
+        <activation>
+            <property>
+                <name>debug</name>
+            </property>
+        </activation>
+        ...
+    </profile>
+</profiles>
+```
 
+当系统属性“debug”根本没有定义时，将激活以下 profile ：
 
-*注意：*上限`,1.5]`可能不包括 1.5 的大多数版本，因为它们将有一个额外的“补丁”版本，例如`_05`上述范围内未考虑的版本。
+``` xml
+<profiles>
+    <profile>
+        <activation>
+            <property>
+                <name>!debug</name>
+            </property>
+        </activation>
+        ...
+    </profile>
+</profiles>
+```
 
-下一个将根据操作系统设置激活。有关操作系统值的更多详细信息，请参阅[Maven Enforcer 插件](https://maven.apache.org/enforcer/enforcer-rules/requireOS.html)。
+当未定义系统属性“debug”或使用非“true”值定义时，将激活以下 profile 。
 
-
-
-当系统属性“debug”被指定为任何值时，下面的配置文件将被激活：
-
-
-
-当系统属性“调试”根本没有定义时，将激活以下配置文件：
-
-
-
-当未定义系统属性“debug”或使用非“true”值定义时，将激活以下配置文件。
-
-
+``` xml
+<profiles>
+    <profile>
+        <activation>
+            <property>
+                <name>debug</name>
+                <value>!true</value>
+            </property>
+        </activation>
+        ...
+    </profile>
+</profiles>
+```
 
 要激活它，您可以在命令行上键入其中一个：
 
+``` powershell
+mvn groupId:artifactId:goal
+mvn groupId:artifactId:goal -Ddebug=false
+```
 
+下一个示例将在使用值“test”指定系统属性“environment”时触发 profile ：
 
-下一个示例将在使用值“test”指定系统属性“environment”时触发配置文件：
-
-
+``` xml
+<profiles>
+    <profile>
+        <activation>
+            <property>
+                <name>environment</name>
+                <value>test</value>
+            </property>
+        </activation>
+        ...
+    </profile>
+</profiles>
+```
 
 要激活它，您可以在命令行上键入：
 
+``` xml
+mvn groupId:artifactId:goal -Denvironment=test
+```
 
+从 Maven 3.0 开始，POM 中的 profile 也可以根据 `settings.xml` 中的活动 profiles 的属性来激活。
 
-从 Maven 3.0 开始，POM 中的配置文件也可以根据来自`settings.xml`.
+**注意**： 环境变量，如 `FOO` ，可以以 `env.FOO` 的形式使用。进一步注意，环境变量名称在 Windows 上被规范化为全部大写。
 
-**注意**： 环境变量之类`FOO`的可用作表单的属性`env.FOO`。进一步注意，环境变量名称在 Windows 上被规范化为全部大写。
+这个示例将在生成的文件`target/generated-sources/axistools/wsdl2java/org/apache/maven` 丢失时触发 profile 。
 
-此示例将在生成的文件`target/generated-sources/axistools/wsdl2java/org/apache/maven`丢失时触发配置文件。
+``` xml
+<profiles>
+    <profile>
+        <activation>
+            <file>
+                <missing>target/generated-sources/axistools/wsdl2java/org/apache/maven</missing>
+            </file>
+        </activation>
+        ...
+    </profile>
+</profiles>
+```
 
+从 Maven 2.0.9 开始，可以对标签 `<exists>` 和 `<missing>` 进行插值。支持的变量是系统属性，如 `${user.home}` ，和环境变量，如`${env.HOME}`。请注意，POM 本身中定义的属性和值在这里不能用于插值，例如上面的示例激活器不能使用`${project.build.directory}`但需要硬编码路径 `target`。
 
+Profiles 也可以在默认情况下激活，使用如下配置：
 
-从 Maven 2.0.9 开始，可以对标签`<exists>`和`<missing>`进行插值。支持的变量是系统属性`${user.home}`和环境变量，如`${env.HOME}`. 请注意，POM 本身中定义的属性和值在这里不能用于插值，例如上面的示例激活器不能使用`${project.build.directory}`但需要硬编码路径`target`。
-
-默认情况下，配置文件也可以使用如下配置处于活动状态：
+``` xml
+<profiles>
+    <profile>
+        <id>profile-1</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        ...
+    </profile>
+</profiles>
+```
 
 
 
@@ -273,5 +389,4 @@ POM 中指定的配置文件可以修改[以下 POM 元素](https://maven.apache
 
 
 只需将配置文件 ID 中的“=”替换为“-”即可获得正确的命令行选项。
-
 
