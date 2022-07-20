@@ -4,7 +4,7 @@
 
 Apache Maven 是一个**软件项目管理和理解工具**。 **基于项目对象模型（POM）的概念，Maven 可以从中央信息块管理项目的构建、报告和文档。**
 
-如果您认为 Maven 可以帮助您的项目，您可以在导航的 [“关于 Maven”](基础工具/项目管理工具/maven/官网翻译/About-Maven/) 部分中找到更多信息：这包括对[Maven 是什么](http://maven.apache.org/what-is-maven.html)的深入描述和[一些主要功能的列表](http://maven.apache.org/maven features.html)。
+如果您认为 Maven 可以帮助您的项目，您可以在导航的 [“关于 Maven”](基础工具/项目管理工具/maven/官网翻译/About-Maven/) 部分中找到更多信息：这包括对[Maven 是什么](基础工具/项目管理工具/maven/官网翻译/About-Maven/What-is-Maven.md)的深入描述和[一些主要功能的列表](基础工具/项目管理工具/maven/官网翻译/About-Maven/Features.md)。
 
 根据您希望如何使用 Maven，此网站分为以下部分：
 

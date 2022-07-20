@@ -1,7 +1,7 @@
 # 关于 Maven
 
 * [Maven 是什么](基础工具/项目管理工具/maven/官网翻译/About-Maven/What-is-Maven.md)
-* [功能](基础工具/项目管理工具/maven/官网翻译/About-Maven/Features.md)
+* [功能列表](基础工具/项目管理工具/maven/官网翻译/About-Maven/Features.md)
 * 下载 https://maven.apache.org/download.cgi
 * [使用](基础工具/项目管理工具/maven/官网翻译/Maven-Users-Centre/)
   * 安装 https://maven.apache.org/install.html
