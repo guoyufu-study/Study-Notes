@@ -13,4 +13,5 @@
 * [Spring Boot 2 + Thymeleaf 企业应用实战](编程语言/Java/Javalang/Spring生态系统/books/spring-boot2-thymeleaf.md)
 * [Spring Boot + Vue 开发实战](编程语言/Java/Javalang/Spring生态系统/books/spring-boot-vue-cli2.md)
 * [Spring Boot + Vue 全栈开发实战](编程语言/Java/Javalang/Spring生态系统/books/spring-boot-vue-cli4.md)
+* [Spring Security 实战](编程语言/Java/Javalang/Spring生态系统/books/spring-security-in-action.md)
 
