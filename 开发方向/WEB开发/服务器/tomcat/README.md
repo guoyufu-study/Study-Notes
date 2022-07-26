@@ -21,5 +21,7 @@ Apache Tomcat、Tomcat、Apache、Apache feather 和 Apache Tomcat 项目徽标�
 
 [笔记](开发方向/WEB开发/服务器/tomcat/Tomcat容器.md)
 
+[调试 Tomcat 源码](开发方向/WEB开发/服务器/tomcat/调试Tomcat源码.md)
+
 ## 《Tomcat 架构解析》
 
