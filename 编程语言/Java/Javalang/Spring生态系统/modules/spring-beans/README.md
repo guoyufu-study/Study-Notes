@@ -20,14 +20,14 @@
 
 ## 核心功能
 
-[自动装配](./自动装配功能.md)
+[自动装配](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/自动装配功能.md)
 
-[生成 bean 名称](./BeanNameGenerator.md)
+[生成 bean 名称](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanNameGenerator.md)
 
-[实例化策略](./InstantiationStrategy.md)
+[实例化策略](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/InstantiationStrategy.md)
 
-[bean 定义](./BeanDefinition.md)
+[bean 定义](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinition.md)
 
-[bean 定义读取器](./BeanDefinitionReader.md)
+[bean 定义读取器](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinitionReader.md)
 
-[bean 元数据元素](./BeanDefinitionReader.md)
+[bean 元数据元素](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinitionReader.md)
