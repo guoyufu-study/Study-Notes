@@ -15,3 +15,8 @@
 * [Spring Boot + Vue 全栈开发实战](编程语言/Java/Javalang/Spring生态系统/books/spring-boot-vue-cli4.md)
 * [Spring Security 实战](编程语言/Java/Javalang/Spring生态系统/books/spring-security-in-action.md)
 
+## 源码阅读
+
+* [spring-beans](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/)
+* [spring-webmvc](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/)
+* [spring-boot](编程语言/Java/Javalang/Spring生态系统/modules/spring-boot/)
