@@ -36,11 +36,11 @@
 
 此处使用了模板方法模式。
 
-如果没缓存就创建，如果已经缓存，就从缓存中查找。代码如下：
+如果不允许缓存，直接创建；如果允许缓存，先从缓存中查找。代码如下：
 
 ![Abstract Caching View Resolver - resolve View Name 极简](images\AbstractCachingViewResolver-resolveViewName-极简.png)
 
-如果已经缓存，但在缓存中没找到，重新创建。具体代码如下，
+如果在缓存中没找到，直接创建。具体代码如下，
 
 ![AbstractCachingViewResolver-resolveViewName](images\AbstractCachingViewResolver-resolveViewName.png)
 
@@ -51,7 +51,7 @@
 
 ![AbstractCachingViewResolver-createView](images\AbstractCachingViewResolver-createView.png)
 
-#### `loadView`
+#### `loadView`（抽象）
 
 子类必须实现这个方法，为指定的视图构建一个 `View` 对象。返回的 `View` 对象将被这个 `ViewResolver` 基类缓存。
 不强制子类支持国际化：不支持国际化的子类可以简单地忽略 `locale` 参数
@@ -66,6 +66,15 @@ protected abstract View loadView(String viewName, Locale locale) throws Exceptio
 ### 基于 URL 的视图解析器
 
 > `org.springframework.web.servlet.view.UrlBasedViewResolver`
+
+`org.springframework.web.servlet.ViewResolver` 接口的简单实现，允许将符号视图名称直接解析为 URL，而无需显式映射定义。如果您的符号名称以直接的方式与视图资源的名称匹配（即符号名称是资源文件名的唯一部分），则这很有用，而无需为每个视图定义专用映射。
+支持 `AbstractUrlBasedView` 子类，如 `InternalResourceView` 和 `org.springframework.web.servlet.view.freemarker.FreeMarkerView` 。此解析器生成的所有视图的视图类可以通过 `viewClass` 属性指定。
+视图名称可以是资源 URL 本身，也可以通过指定的前缀和/或后缀进行扩充。明确支持将包含 `RequestContext` 的属性导出到所有视图。
+示例：`prefix="/WEB-INF/jsp/"`, `suffix=".jsp"`, `viewname="test"` → `"/WEB-INF/jsp/test.jsp"`
+作为一项特殊功能，可以通过 `redirect:` 前缀指定重定向 URL。例如：`redirect:myAction` 将触发到给定 URL 的重定向，而不是作为标准视图名称的解析。这通常用于在完成表单工作流程后重定向到控制器 URL。
+此外，可以通过 `forward:` 前缀指定转发 URL。例如：`forward:myAction` 将触发对给定 URL 的转发，而不是作为标准视图名称解析。这通常用于控制器 URL；它不应该用于 JSP URL - 在那里使用逻辑视图名称。
+注意：此类不支持本地化解析，即根据当前语言环境将符号视图名称解析为不同的资源。
+注意：链接 `ViewResolver` 时，`UrlBasedViewResolver` 将检查指定资源是否实际存在。但是，使用 `InternalResourceView` ，通常不可能预先确定目标资源的存在。在这种情况下，`UrlBasedViewResolver` 将始终为任何给定的视图名称返回一个视图；因此，它应该被配置为链中的最后一个 `ViewResolver`。
 
 ![UrlBasedViewResolver结构](images\UrlBasedViewResolver结构.png)
 
@@ -98,7 +107,7 @@ protected abstract View loadView(String viewName, Locale locale) throws Exceptio
 分三步：
 
 * 创建视图
-* 应用 Spring 生命生命周期方法
+* 应用 Spring 生命周期方法
 * 检查资源
 
 #### `buildView`
@@ -114,7 +123,7 @@ bean 容器定义的 Spring 生命周期方法不必在这里调用；这些将�
 #### `instantiateView`
 
 实例化指定的视图类。
-默认实现使用反射来实例化类。
+默认实现**使用反射来实例化类**。
 
 ![UrlBasedViewResolver-instantiateView](images\UrlBasedViewResolver-instantiateView.png)
 
@@ -141,21 +150,23 @@ bean 容器定义的 Spring 生命周期方法不必在这里调用；这些将�
 
 这个解析器生成的所有视图的视图类都可以通过 `setViewClass` 指定。
 
-默认值为`InternalResourceView` ，如果有 JSTL API，则为 `JstlView`。
+默认值为 `InternalResourceView` ，如果有 JSTL API，则为 `JstlView`。
 
 ![InternalResourceViewResolver构造](images\InternalResourceViewResolver构造.png)
 
-#### `instantiateView`
 
-![InternalResourceViewResolver-instantiateView](images\InternalResourceViewResolver-instantiateView.png)
-
-`InternalResourceView` 或 `JstlView`，否则由父类方法执行反射创建。
 
 #### `buildView`
 
 ![InternalResourceViewResolver-buildView](images\InternalResourceViewResolver-buildView.png)
 
 调用父类方法，创建和设置视图对象，然后个性化设置。
+
+#### `instantiateView`
+
+![InternalResourceViewResolver-instantiateView](images\InternalResourceViewResolver-instantiateView.png)
+
+`InternalResourceView` 或 `JstlView`，否则执行父类方法反射创建。
 
 ## 动态架构
 
