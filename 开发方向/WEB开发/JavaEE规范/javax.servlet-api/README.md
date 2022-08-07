@@ -20,7 +20,7 @@
 
 ![onStartup 方法](images\ServletContainerInitializer-onStartup方法.png)
 
-通知这个 `ServletContainerInitializer` 由给定的 `ServletContext` 表示的应用程序的启动。
+由给定的 `ServletContext` 表示的应用程序的启动，通知这个 `ServletContainerInitializer` 。
 
 如果这个 `ServletContainerInitializer` 被捆绑在应用程序的 `WEB-INF/lib` 目录中的 JAR 文件中，那么它的 `onStartup` 方法在捆绑应用程序的启动期间只会被调用一次。如果这个 `ServletContainerInitializer` 被捆绑在任何 `WEB-INF/lib` 目录外的 JAR 文件中，但仍然可以像上面描述的那样被发现，则每次启动应用程序时都会调用其 `onStartup` 方法。
 
