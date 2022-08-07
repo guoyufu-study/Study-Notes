@@ -13,11 +13,15 @@
 ### `resolveViewName`
 
 按名称解析给定的视图。
-注意：为了允许 `ViewResolver` 链接，如果 `ViewResolver` 中未定义具有给定名称的视图，则应返回 `null` 。但是，这不是必需的：某些 `ViewResolver` 将始终尝试使用给定名称构建 `View` 对象，无法返回 `null` （而是在 `View` 创建失败时抛出异常）。
+注意：为了允许 `ViewResolver` 链，如果 `ViewResolver` 中未定义具有给定名称的视图，则应返回 `null` 。但是，这不是必需的：某些 `ViewResolver` 将始终尝试使用给定名称构建 `View` 对象，无法返回 `null` （而是在 `View` 创建失败时抛出异常）。
 
 ## 子类型
 
 ![ViewResolver子类型](images\ViewResolver子类型.png)
+
+
+
+
 
 ### 缓存视图功能
 
@@ -36,7 +40,7 @@
 
 此处使用了模板方法模式。
 
-如果不允许缓存，直接创建；如果允许缓存，先从缓存中查找。代码如下：
+如果不允许缓存，直接创建；如果允许缓存，先计算缓存键，再从缓存中查找。代码如下：
 
 ![Abstract Caching View Resolver - resolve View Name 极简](images\AbstractCachingViewResolver-resolveViewName-极简.png)
 
@@ -93,11 +97,11 @@ protected abstract View loadView(String viewName, Locale locale) throws Exceptio
 * 如果此解析器不应该处理给定的视图，则返回 `null` 以传递给链中的下一个解析器。
 * 检查特殊的 `redirect:` 前缀。
 * 检查特殊的 `forward:` 前缀。
-* 否则回退到超类实现：调用 `loadView`。
+* 否则回退到超类 `createView` 实现：调用 `loadView`。
 
 #### `loadView`
 
-委托 `buildView` 创建指定视图类的新实例。应用以下 Spring 生命周期方法（由通用 Spring bean 工厂支持）：
+委托 `buildView` 创建指定视图类的新实例。然后，应用以下 Spring 生命周期方法（由通用 Spring bean 工厂支持）：
 
 * `ApplicationContextAware` 的 `setApplicationContext`
 * `InitializingBean` 的 `afterPropertiesSet`
@@ -126,6 +130,8 @@ bean 容器定义的 Spring 生命周期方法不必在这里调用；这些将�
 默认实现**使用反射来实例化类**。
 
 ![UrlBasedViewResolver-instantiateView](images\UrlBasedViewResolver-instantiateView.png)
+
+
 
 ### 内部资源视图解析器（默认）
 
@@ -168,33 +174,3 @@ bean 容器定义的 Spring 生命周期方法不必在这里调用；这些将�
 
 `InternalResourceView` 或 `JstlView`，否则执行父类方法反射创建。
 
-## 动态架构
-
-### `resolveViewName` 的调用方
-
-![ViewResolver-resolveViewName的调用方](images\ViewResolver-resolveViewName的调用方.png)
-
-### `resolveViewName` 入口
-
-`DispatcherServlet` 调用 `ViewResolver#resolveViewName`  的入口
-
-![Dispatcher构造View入口](images\Dispatcher构造View入口.png)
-
-### `resolveViewName` 执行流程
-
-`InternalResourceViewResolver#resolveViewName` 执行流程
-
-``` java
-public static void main(String[] args) {
-    InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-    viewResolver.setPrefix("WEB-INF/jsp");
-    viewResolver.setSuffix(".jsp");
-    try {
-        viewResolver.resolveViewName("hello", Locale.CHINA);
-    } catch (Exception e) {
-        throw new RuntimeException(e);
-    }
-}
-```
-
-![InternalResourceViewResolver#resolveViewName执行流程](images\InternalResourceViewResolver#resolveViewName执行流程.png)
