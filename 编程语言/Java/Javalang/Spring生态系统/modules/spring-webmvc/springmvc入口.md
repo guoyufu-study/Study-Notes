@@ -26,7 +26,7 @@ public class AnnotationConfigDispatcherServletInitializer extends AbstractAnnota
 
 ## 原理
 
-![springmvc启动入口](G:\文档工具\docsify\study-notes\编程语言\Java\Javalang\Spring生态系统\modules\spring-webmvc\images\springmvc启动入口.png)
+![springmvc启动入口](images\springmvc启动入口.png)
 
 
 
