@@ -29,11 +29,36 @@
 
 ## 功能
 
-### 静态资源
+### 启用默认 Servlet 处理静态资源
 
-添加处理器来提供静态资源，比如图片、js 和 css 文件，这些静态资源来自 web 应用根目录、类路径等特定位置。
+配置一个处理器，通过转发到 Servlet 容器的 `default` Servlet 来委派未处理的请求。一个常见的用例是 `DispatcherServlet` 被映射到 `/`，从而覆盖 Servlet 容器对静态资源的默认处理。
+
+![WebMvcConfigurer-configureDefaultServletHandling](images\WebMvcConfigurer-configureDefaultServletHandling.png)
+
+比如，
+
+``` java
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+```
+
+
+
+### 静态资源处理器
+
+添加处理器来处理静态资源，比如图片、js 和 css 文件，这些静态资源来自 web 应用根目录、类路径等特定位置。
 
 ![WebMvcConfigurer-addResourceHandlers](images\WebMvcConfigurer-addResourceHandlers.png)
+
+#### `resourceHandlerMapping` bean
+
+> `org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport#resourceHandlerMapping`
+
+![WebMvcConfigurationSupport-resourceHandlerMapping](images\WebMvcConfigurationSupport-resourceHandlerMapping.png)
+
+返回按 `Integer.MAX_VALUE-1` 排序的处理程序映射，并带有映射的资源处理程序。要配置资源处理，请覆盖`addResourceHandlers` 。
 
 #### `ResourceHandlerRegistry`
 
@@ -42,6 +67,22 @@
 存储资源处理程序的注册，以通过 Spring MVC 提供静态资源，例如图像、css 文件和其他资源，包括设置缓存标头以优化 Web 浏览器中的有效加载。资源可以从 Web 应用程序根目录下的位置、类路径和其他位置提供。
 要创建资源处理程序，请使用 `addResourceHandler(String...)` 提供应调用处理程序以提供静态资源的 URL 路径模式（例如`/resources/**` ）。
 然后在返回的 `ResourceHandlerRegistration` 上使用其他方法来添加一个或多个用于提供静态内容的位置（例如 `{ "/" 、 "classpath:/META-INF/public-web-resources/" }`）或指定缓存服务资源的期限。
+
+![ResourceHandlerRegistry-结构](images\ResourceHandlerRegistry-结构.png)
+
+#### 示例
+
+``` java
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/html/**")
+                .addResourceLocations("/WEB-INF/html/");
+    }
+```
+
+访问 `http://localhost/html/hello.html`，会定位到 `/WEB-INF/html/hello.html` 文件。
+
+`ResourceHandlerRegistry` 的 `order` 是 `Ordered.LOWEST_PRECEDENCE - 1`，即只比默认 Servlet 大 `1`。
 
 ### 配置简单的自动化控制器
 
@@ -58,3 +99,15 @@
 ![WebMvcConfigurer-configureViewResolvers](images\WebMvcConfigurer-configureViewResolvers.png)
 
 配置视图解析器，将从控制器返回的基于字符串的视图名称转换为具体的 `org.springframework.web.servlet.View` 实现来执行渲染。
+
+
+
+#### 示例
+
+``` java
+	@Override
+    public void configureViewResolvers(ViewResolverRegistry registry) {
+        registry.jsp().prefix("/WEB-INF/jsp/");
+    }
+```
+

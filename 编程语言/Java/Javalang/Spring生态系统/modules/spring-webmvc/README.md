@@ -1,10 +1,12 @@
 # spring-webmvc
 
-[创建WEB应用流程](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/创建WEB应用流程.md)
+[创建WEB应用的流程](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/创建WEB应用流程.md)
 
-[Spring webMVC 入口](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/springmvc入口.md)
+[SpringServletContainerInitializer](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/SpringServletContainerInitializer.md)：启动 Spring Web MVC 应用的入口点。
 
-[核心控制器 DipatcherServlet](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/DispatcherServlet.md)
+[HttpServlet](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/HttpServlet.md)：Spring Web MVC 内置的 `HttpServlet` 实现类。
+
+[DipatcherServlet](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/DispatcherServlet.md)：核心控制器。
 
 
 
@@ -14,7 +16,7 @@
 
 ### Java 风格
 
-[WebMvcConfigurer](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/WebMvcConfigurer.md)
+[WebMvcConfigurer](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/WebMvcConfigurer.md)：配置说明，以及简单示例。
 
 ## 组件
 

@@ -90,7 +90,7 @@
 
 ### 原理
 
-将此注解添加到 `@Configuration` 类会从 `WebMvcConfigurationSupport` 导入 Spring MVC 配置，例如：
+将此注解添加到 `@Configuration` 类会**从 `WebMvcConfigurationSupport` 导入 Spring MVC 配置**，例如：
 
 ``` java
 @Configuration
@@ -100,7 +100,7 @@ public class MyConfiguration {
 }
 ```
 
-要自定义导入的配置，请实现接口 `WebMvcConfigurer` 并覆盖各个方法，例如：
+要**自定义**导入的配置，请实现接口 `WebMvcConfigurer` 并覆盖各个方法，例如：
 
 ``` java
 @Configuration
