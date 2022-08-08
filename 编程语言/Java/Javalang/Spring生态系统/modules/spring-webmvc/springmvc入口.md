@@ -1,16 +1,44 @@
 # Spring MVC 入口
 
+## 配置示例
+
+``` java
+public class AnnotationConfigDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    @Override
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class[] {RootConfig.class};
+    }
+
+    @Override
+    protected Class<?>[] getServletConfigClasses() {
+        return new Class[] {WebConfig.class};
+    }
+
+    @Override
+    protected String[] getServletMappings() {
+        return new String[] {"/demo", "/"};
+    }
+}
+```
+
+
+
+## 原理
+
 ![springmvc启动入口](G:\文档工具\docsify\study-notes\编程语言\Java\Javalang\Spring生态系统\modules\spring-webmvc\images\springmvc启动入口.png)
+
+
 
 ## `SpringServletContainerInitializer`
 
 > `org.springframework.web.SpringServletContainerInitializer`
 
-Servlet 3.0 `ServletContainerInitializer` 旨在支持使用 Spring 的 `WebApplicationInitializer` SPI 对 servlet 容器进行基于代码的配置，而不是（或可能结合使用）传统的基于 `web.xml` 的方法。
+Servlet 3.0 `ServletContainerInitializer` 设计用于支持使用 Spring 的 `WebApplicationInitializer` SPI 的基于代码的 Servlet 容器配置，这与传统的基于 `web.xml` 的方法相反(或可能与之结合)。
 
 ### 运作机制
 
-假设 `spring-web` 模块 JAR 存在于类路径中，则此类将被加载和实例化，并在容器启动期间由任何符合 Servlet 3.0 的容器调用其`onStartup` 方法。这是通过检测 `spring-web` 模块的 `META-INF/services/javax.servlet.ServletContainerInitializer` 服务提供者配置文件的 JAR 服务 API `ServiceLoader.load(Class)` 方法发生的。有关完整的详细信息，请参阅 [JAR 服务 API 文档](https://docs.oracle.com/javase/6/docs/technotes/guides/jar/jar.html#Service%20Provider) 以及 Servlet 3.0 最终草案规范的第 8.2.4节。
+假设 `spring-web` 模块 JAR 存在于类路径中，则这个类将被加载和实例化，并在容器启动期间由任何符合 Servlet 3.0 的容器调用其`onStartup` 方法。这是通过检测 `spring-web` 模块的 `META-INF/services/javax.servlet.ServletContainerInitializer` 服务提供者配置文件的 JAR 服务 API `ServiceLoader.load(Class)` 方法发生的。有关完整的详细信息，请参阅 [JAR 服务 API 文档](https://docs.oracle.com/javase/6/docs/technotes/guides/jar/jar.html#Service%20Provider) 以及 Servlet 3.0 最终草案规范的第 8.2.4节。
 
 
 
@@ -133,7 +161,7 @@ public class MyWebAppInitializer implements WebApplicationInitializer {
 
 作为上述的替代方案，您还可以从 `org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer` 扩展。请记住， `WebApplicationInitializer` 实现是自动检测的——因此您可以随意将它们打包到您的应用程序中。
 
-### 订购 `WebApplicationInitializer` 执行
+### 排序 `WebApplicationInitializer` 执行
 
 `WebApplicationInitializer` 实现可以选择在类级别使用 Spring 的 `Order` 注解进行注解，或者可以实现 Spring 的 `Ordered` 接口。如果是这样，初始化器将在调用之前排序。这为用户提供了一种机制来确保 servlet 容器初始化发生的顺序。预计很少使用此功能，因为典型应用程序可能会将所有容器初始化集中在单个 `WebApplicationInitializer` 中。
 
