@@ -207,13 +207,8 @@ Apache Tomcat 将其内部 `DefaultServlet` 映射到 `/`，并且在 Tomcat 版
 
 ![AbstractDispatcherServletInitializer-registerDispatcherServlet](images\AbstractDispatcherServletInitializer-registerDispatcherServlet.png)
 
-`registerDispatcherServlet` 方法将使用 `getServletName()` 返回的名称创建一个 `DispatcherServlet`，使用从 `createServletApplicationContext()` 返回的应用程序上下文对其进行初始化，并将其映射到从 `getServletMappings()` 返回的模式。
+`registerDispatcherServlet` 方法将使用 `getServletName()` 返回的名称创建一个 `DispatcherServlet`，使用从 `createServletApplicationContext()` 返回的 `AplicationContext` 对其进行初始化，并将其映射到从 `getServletMappings()` 返回的模式。
 可以通过覆盖 `customizeRegistration(ServletRegistration.Dynamic)` 或 `createDispatcherServlet(WebApplicationContext)` 来实现进一步的定制。
-
-* `getServletName()`  获取 servlet 名称。
-* `createServletApplicationContext` 创建要提供给 `DispatcherServlet` 的 servlet 应用上下文。**抽象方法**
-* `createDispatcherServlet` 使用指定的 `WebApplicationContext` 创建一个 `DispatcherServlet`。
-* 
 
 ## `AbstractAnnotationConfigDispatcherServletInitializer`
 
