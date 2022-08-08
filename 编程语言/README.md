@@ -4,7 +4,7 @@
 
 * [Clang](编程语言/Clang/) ：C 和 C++ 仍然是构建操作系统和各种嵌入式系统和流行工具。因为它们编写的程序尽管安全性不佳，但运行时占用资源少。
 * [Java](编程语言/Java/)
-  * [Java](编程语言/Java/javalang/)
+  * [Java](编程语言/Java/Javalang/)
   * [Kotlin](编程语言/Java/Kotlin/) 
   * [Scala](编程语言/Java/Scala/)
   * [Groovy](编程语言/Java/Groovy/)
