@@ -29,13 +29,19 @@
 
 ## 功能
 
-### 启用默认 Servlet 处理静态资源
+### 启用默认  Servlet  处理未处理的请求
 
 配置一个处理器，通过转发到 Servlet 容器的 `default` Servlet 来委派未处理的请求。一个常见的用例是 `DispatcherServlet` 被映射到 `/`，从而覆盖 Servlet 容器对静态资源的默认处理。
 
 ![WebMvcConfigurer-configureDefaultServletHandling](images\WebMvcConfigurer-configureDefaultServletHandling.png)
 
-比如，
+#### `DefaultServletHandlerConfigurer`
+
+> `org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer`
+
+
+
+#### 示例
 
 ``` java
     @Override

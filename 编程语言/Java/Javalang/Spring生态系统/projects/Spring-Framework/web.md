@@ -25,6 +25,13 @@
       13. [Logging](编程语言/Java/Javalang/Spring生态系统/projects/Spring-Framework/web-mvc-logging.md)
    2. Filters
    3. Annotated Controllers
+      1. Declaration
+      2. Request Mapping
+      3. [Handler Methods](编程语言/Java/Javalang/Spring生态系统/projects/Spring-Framework/web-mvc-ann-methods.md)
+      4. [Model](编程语言/Java/Javalang/Spring生态系统/projects/Spring-Framework/web-mvc-ann-modelattrib-methods.md)
+      5. DataBinder
+      6. Exceptions
+      7. Controller Advice
    4. Functional Endpoints
    5. URI Links
    6. Asynchronous Requests
@@ -43,21 +50,15 @@
        9. Jackson
        10. XML Marshalling
        11. XSLT Views
-   11. MVC config
-       1. Enable MVC Configuration
-       2. MVC Config API
-       3. Type Conversion
-       4. Validation
-       5. Interceptors
-       6. Content Types
-       7. Message Converters
-       8. View Controllers
-       9. View Resolvers
-       10. Static Resources
-       11. [Default Servlet](编程语言/Java/Javalang/Spring生态系统/projects/Spring-Framework/web-mvc-default-servlet-handler.md)
-       12. Path Matching
-       13. Advanced Java Config
-       14. Advanced XML Config
+   11. [MVC config](编程语言/Java/Javalang/Spring生态系统/projects/Spring-Framework/web-mvc-config.md)
+       
+       启用 MVC 配置、MVC 配置 API、
+       
+       类型转换、验证、拦截器、内容类型、消息转换器、
+       
+       视图控制器、视图解析器、静态资源、默认 Servlet、路径匹配、
+       
+       高级 Java 配置、高级 XML 配置
    12. HTTP/2
 2. REST Clients
 3. Testing
