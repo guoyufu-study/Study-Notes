@@ -16,7 +16,7 @@
 
 ### XML 风格
 
-[NamespaceHandler](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/NamespaceHandler.md)
+[NamespaceHandler](编程语言/Java/Javalang/Spring生态系统/modules/spring-webmvc/NamespaceHandler.md)：名称空间处理器。
 
 ### Java 风格
 
