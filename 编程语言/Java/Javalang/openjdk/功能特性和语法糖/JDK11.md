@@ -10,7 +10,7 @@
 * 318: [Epsilon: A No-Op Garbage Collector](https://openjdk.java.net/jeps/318)
 * 320: [Remove the Java EE and CORBA Modules](https://openjdk.java.net/jeps/320)
 * 321: [HTTP Client (Standard)](https://openjdk.java.net/jeps/321)
-* **323: [Lambda 参数的局部变量类型推断](编程语言/Java/Javalang/openjdk/功能特性和语法糖/局部变量类型推断.md)**
+* **323: [Lambda 参数的局部变量类型推断](编程语言/Java/Javalang/openjdk/功能特性和语法糖/local-variable-type-inference.md)**
 * 324: [Key Agreement with Curve25519 and Curve448](https://openjdk.java.net/jeps/324)
 * 327: [Unicode 10](https://openjdk.java.net/jeps/327)
 * 328: [Flight Recorder](https://openjdk.java.net/jeps/328)

@@ -4,7 +4,7 @@
 
 ## 功能
 
-* **286: [局部变量类型推断](编程语言/Java/Javalang/openjdk/功能特性和语法糖/局部变量类型推断.md)**
+* **286: [局部变量类型推断](编程语言/Java/Javalang/openjdk/功能特性和语法糖/local-variable-type-inference.md)**
 * 296: [Consolidate the JDK Forest into a Single Repository](https://openjdk.java.net/jeps/296)
 * 304: [Garbage-Collector Interface](https://openjdk.java.net/jeps/304)
 * 307: [Parallel Full GC for G1](https://openjdk.java.net/jeps/307)
