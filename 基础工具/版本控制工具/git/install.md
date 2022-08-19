@@ -20,7 +20,7 @@
 
 #### 选择目标位置
 
-![install-git-windows-location](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-location.png)
+![install-git-windows-location](images\install-git-windows-location.png)
 
 > 默认目标位置： `C:\Program Files\Git`
 
@@ -34,7 +34,7 @@ Git 应该安装在哪里？
 
 #### 选择组件
 
-![install-git-windows-components](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-components.png)
+![install-git-windows-components](images\install-git-windows-components.png)
 
 应该安装哪些组件？
 
@@ -57,7 +57,7 @@ https://www.nano-editor.org/dist/v2.8/nano.html
 
 #### 选择开始菜单文件夹
 
-![install-git-windows-start-menu](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-start-menu.png)
+![install-git-windows-start-menu](images\install-git-windows-start-menu.png)
 
 安装程序应该在哪里放置程序的快捷方式？
 
@@ -71,7 +71,7 @@ https://www.nano-editor.org/dist/v2.8/nano.html
 
 ##### Vim
 
-![install-git-windows-default-editor](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-default-editor-vim.png)
+![install-git-windows-default-editor](images\install-git-windows-default-editor-vim.png)
 
 使用 `Vim`，无处不在的文本编辑器，作为 Git 的默认编辑器。
 
@@ -85,55 +85,55 @@ https://www.nano-editor.org/dist/v2.8/nano.html
 
 > https://www.nano-editor.org/dist/v2.8/nano.html
 
-![install-git-windows-default-editor-Nano](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-default-editor-Nano.png)
+![install-git-windows-default-editor-Nano](images\install-git-windows-default-editor-Nano.png)
 
 ##### Notepad++
 
 > https://notepad-plus-plus.org
 
-![install-git-windows-default-editor-Notepad-plus-plus](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-default-editor-Notepad-plus-plus.png)
+![install-git-windows-default-editor-Notepad-plus-plus](images\install-git-windows-default-editor-Notepad-plus-plus.png)
 
 ##### Visual Studio Code
 
 > https://code.visualstudio.com//
 
-![install-git-windows-default-editor-Visual-Studio-Code](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-default-editor-Visual-Studio-Code.png)
+![install-git-windows-default-editor-Visual-Studio-Code](images\install-git-windows-default-editor-Visual-Studio-Code.png)
 
 ##### Sublime Text
 
 > https://www.sublimetext.com
 
-![install-git-windows-default-editor-Sublime-text](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-default-editor-Sublime-text.png)
+![install-git-windows-default-editor-Sublime-text](images\install-git-windows-default-editor-Sublime-text.png)
 
 ##### Atom
 
 > https://atom.io
 
-![install-git-windows-default-editor-Atom](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-default-editor-Atom.png)
+![install-git-windows-default-editor-Atom](images\install-git-windows-default-editor-Atom.png)
 
 ##### VSCodium
 
 > https://vscodium.com/
 
-![install-git-windows-default-editor-VSCodium](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-default-editor-VSCodium.png)
+![install-git-windows-default-editor-VSCodium](images\install-git-windows-default-editor-VSCodium.png)
 
 ##### Notepad
 
-![install-git-windows-default-editor-NotePad](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-default-editor-NotePad.png)
+![install-git-windows-default-editor-NotePad](images\install-git-windows-default-editor-NotePad.png)
 
 ##### Wordpad
 
-![install-git-windows-default-editor-Wordpad](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-default-editor-Wordpad.png)
+![install-git-windows-default-editor-Wordpad](images\install-git-windows-default-editor-Wordpad.png)
 
 ##### 其它编辑器
 
-![install-git-windows-default-editor-other-editor](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-default-editor-other-editor.png)
+![install-git-windows-default-editor-other-editor](images\install-git-windows-default-editor-other-editor.png)
 
 
 
 #### 调整初始分支名
 
-![install-git-windows-initial-branch-name](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-initial-branch-name.png)
+![install-git-windows-initial-branch-name](images\install-git-windows-initial-branch-name.png)
 
 调整新存储库中初始分支的名称。
 
@@ -151,7 +151,7 @@ https://www.nano-editor.org/dist/v2.8/nano.html
 
 #### 调整你的 PATH 环境
 
-![install-git-windows-path-environment](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-path-environment.png)
+![install-git-windows-path-environment](images\install-git-windows-path-environment.png)
 
 ##### 仅从 Git Bash 中使用  Git 
 
@@ -169,7 +169,7 @@ Git 和可选的 Unix 工具都将添加到您的 `PATH` 中。
 
 #### 选择 SSH 可执行文件
 
-![install-git-windows-ssh-executable](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-ssh-executable.png)
+![install-git-windows-ssh-executable](images\install-git-windows-ssh-executable.png)
 
 你希望 Git 使用哪个 Secure Shell 客户端程序？
 
@@ -183,23 +183,23 @@ Git 和可选的 Unix 工具都将添加到您的 `PATH` 中。
 
 #### 选择 HTTPS 传输后端
 
-![install-git-windows-https-transport-backend](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-https-transport-backend.png)
+![install-git-windows-https-transport-backend](images\install-git-windows-https-transport-backend.png)
 
 #### 配置行尾转换
 
-![install-git-windows-line-ending-conversions](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-line-ending-conversions.png)
+![install-git-windows-line-ending-conversions](images\install-git-windows-line-ending-conversions.png)
 
 
 
 #### 配置终端模拟器
 
-![install-git-windows-terminal-emulator](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-terminal-emulator.png)
+![install-git-windows-terminal-emulator](images\install-git-windows-terminal-emulator.png)
 
 配置终端模拟器以与 Git Bash 一起使用
 
 #### 选择 `git pull` 的默认行为
 
-![install-git-windows-git-pull-default-behavior](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-git-pull-default-behavior.png)
+![install-git-windows-git-pull-default-behavior](images\install-git-windows-git-pull-default-behavior.png)
 
 
 
@@ -209,7 +209,7 @@ Git 和可选的 Unix 工具都将添加到您的 `PATH` 中。
 >
 > https://github.com/GitCredentialManager/git-credential-manager/blob/HEAD/docs/faq.md#about-the-project
 
-![install-git-windows-credential-manager](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-credential-manager.png)
+![install-git-windows-credential-manager](images\install-git-windows-credential-manager.png)
 
 
 
@@ -217,7 +217,7 @@ Git 和可选的 Unix 工具都将添加到您的 `PATH` 中。
 
 > https://github.com/git-for-windows/git/wiki/Symbolic-Links
 
-![install-git-windows-extra-options](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-extra-options.png)
+![install-git-windows-extra-options](images\install-git-windows-extra-options.png)
 
 
 
@@ -225,15 +225,15 @@ Git 和可选的 Unix 工具都将添加到您的 `PATH` 中。
 
 > https://github.com/git-for-windows/git/discussions/3251
 
-![install-git-windows-experimental-options](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-experimental-options.png)
+![install-git-windows-experimental-options](images\install-git-windows-experimental-options.png)
 
 #### 安装中
 
-![install-git-windows-installing](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-installing.png)
+![install-git-windows-installing](images\install-git-windows-installing.png)
 
 #### 完成 Git 设置向导
 
-![install-git-windows-completing](G:\文档工具\docsify\study-notes\基础工具\版本控制工具\git\images\install-git-windows-completing.png)
+![install-git-windows-completing](images\install-git-windows-completing.png)
 
 
 

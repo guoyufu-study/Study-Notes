@@ -15,5 +15,7 @@
 ## 笔记
 
 * [安装 Windows 版 Git](基础工具/版本控制工具/git/install.md)
+* [配置 Git](基础工具/版本控制工具/git/configuration.md)
 * [常见问答](基础工具/版本控制工具/git/FAQS.md)
 * [GitHub](基础工具/版本控制工具/github/)
+
