@@ -3,12 +3,13 @@
 * [Oracle JDK](编程语言/Java/Javalang/oraclejdk/)
 
 * [Open JDK](编程语言/Java/Javalang/openjdk/)
-  
-  * [JDK增强方案](编程语言/Java/Javalang/openjdk/JEP/)
+  * [JDK 增强方案](编程语言/Java/Javalang/openjdk/JEP/)
   * [功能特性及语法糖](编程语言/Java/Javalang/openjdk/功能特性和语法糖/)
   * [Java 虚拟机](编程语言/Java/Javalang/openjdk/JVM/)
     * [G1](编程语言/Java/Javalang/openjdk/JVM/g1.md)
-
+  
+* [并发编程](编程语言/Java/Javalang/openjdk/并发编程/)
+  
 * 常用框架
   
   * [日志框架](编程语言/Java/Javalang/日志框架/)
