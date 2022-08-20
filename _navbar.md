@@ -44,10 +44,15 @@
   * [Ruby](编程语言/Ruby/)
 * [基础工具](基础工具/)
   * [git](基础工具/版本控制工具/git/)
+  * [GitHub](基础工具/版本控制工具/github/)
   * svn
   * [Ant](基础工具/项目管理工具/Ant/)
   * [maven](基础工具/项目管理工具/maven/)
   * [Gradle](基础工具/项目管理工具/gradle/)
+  * [IDEA](基础工具/IDE/IDEA/)
   * [drawio](基础工具/绘图工具/drawio/)
+  * [Atom](基础工具/文本编辑器/Atom/)
+  * [marktext](基础工具/文本编辑器/marktext/)
+  * Typora
 * [基础架构](基础架构/)
 * [问题](问题汇总/)
