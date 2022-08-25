@@ -16,6 +16,8 @@
 
 ![Bean Definition Reader子类型](images\BeanDefinitionReader子类型.png)
 
+![BeanDefinitionReader-类图](images\BeanDefinitionReader-类图.png)
+
 ### AbstractBeanDefinitionReader
 
 实现 `BeanDefinitionReader` 接口的 bean 定义读取器的**抽象基类**。

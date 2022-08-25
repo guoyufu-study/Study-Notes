@@ -33,13 +33,19 @@ spring-beans 的依赖项：
 
 ## 核心功能
 
-[DefaultListableBeanFactory](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/DefaultListableBeanFactory.md)：Bean 工厂
+### Bean Factory
+
+* [BeanFactory](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanFactory.md)：Bean 工厂
+  * [DefaultListableBeanFactory](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/DefaultListableBeanFactory.md)：Bean 工厂
+* [getBean](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/getBean.md)：获取 `Bean` 实例。
 
 [自动装配](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/自动装配功能.md)
 
 [生成 bean 名称](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanNameGenerator.md)
 
 [实例化策略](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/InstantiationStrategy.md)
+
+### bean 定义
 
 [bean 定义](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinition.md)
 

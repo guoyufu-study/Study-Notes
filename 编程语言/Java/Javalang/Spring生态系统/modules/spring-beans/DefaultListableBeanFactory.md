@@ -6,7 +6,7 @@
 
 > `2001.04` 创建
 
-<img src="G:/文档工具/docsify/study-notes/编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/images/DefaultListableBeanFactory-父级类图-2001.04.png" alt="DefaultListableBeanFactory-父级类图-2001.04" style="zoom:50%;" />
+<img src="images/DefaultListableBeanFactory-父级类图-2001.04.png" alt="DefaultListableBeanFactory-父级类图-2001.04" style="zoom:50%;" />
 
 > `2001.04.13` 引入`org.springframework.beans.factory.BeanFactory`
 
@@ -43,7 +43,7 @@ Spring 的 `ConfigurableListableBeanFactory` 和 `BeanDefinitionRegistry` 接口
 
 > `2003.07` 引入 `org.springframework.beans.factory.HierarchicalBeanFactory`
 
-<img src="G:/文档工具/docsify/study-notes/编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/images/DefaultListableBeanFactory-父级类图-2003.07.png" alt="DefaultListableBeanFactory-父级类图-2003.07" style="zoom:50%;" />
+<img src="images/DefaultListableBeanFactory-父级类图-2003.07.png" alt="DefaultListableBeanFactory-父级类图-2003.07" style="zoom:50%;" />
 
 由可以成为层次结构一部分的 bean 工厂实现的子接口。
 可以在 `ConfigurableBeanFactory` 接口中找到允许以可配置方式设置父级的 bean 工厂的相应 `setParentBeanFactory` 方法。
@@ -52,7 +52,7 @@ Spring 的 `ConfigurableListableBeanFactory` 和 `BeanDefinitionRegistry` 接口
 
 > ``2003.11.03` 引入
 
-<img src="G:/文档工具/docsify/study-notes/编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/images/DefaultListableBeanFactory-父级类图-2003.11.03.png" alt="DefaultListableBeanFactory-父级类图-2003.11.03" style="zoom:50%;" />
+<img src="images/DefaultListableBeanFactory-父级类图-2003.11.03.png" alt="DefaultListableBeanFactory-父级类图-2003.11.03" style="zoom:50%;" />
 
 > `org.springframework.beans.factory.config.ConfigurableBeanFactory`
 
@@ -68,7 +68,7 @@ Spring 的 `ConfigurableListableBeanFactory` 和 `BeanDefinitionRegistry` 接口
 
 > `2003.11.26` 引入 `org.springframework.beans.factory.support.BeanDefinitionRegistry`
 
-<img src="G:/文档工具/docsify/study-notes/编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/images/DefaultListableBeanFactory-父级类图-2003.11.26.png" alt="DefaultListableBeanFactory-父级类图-2003.11.26" style="zoom:50%;" />
+<img src="images/DefaultListableBeanFactory-父级类图-2003.11.26.png" alt="DefaultListableBeanFactory-父级类图-2003.11.26" style="zoom:50%;" />
 
 **包含 bean 定义的注册表**的接口，例如 `RootBeanDefinition` 和 `ChildBeanDefinition` 实例。通常由内部使用 `AbstractBeanDefinition` 层次结构的 `BeanFactorie`s 实现。
 这是 Spring 的 bean factory 包中**唯一封装 bean 定义注册的接口**。标准 `BeanFactory` 接口仅涵盖对完全配置的工厂实例的访问。
@@ -78,7 +78,7 @@ Spring 的 bean 定义读取器期望在这个接口的实现上工作。 Spring
 
 > `2003.12` 引入  `org.springframework.beans.factory.config.AutowireCapableBeanFactory`
 
-<img src="G:/文档工具/docsify/study-notes/编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/images/DefaultListableBeanFactory-父级类图-2003.12.png" alt="DefaultListableBeanFactory-父级类图-2003.12" style="zoom: 43%;" />
+<img src="images/DefaultListableBeanFactory-父级类图-2003.12.png" alt="DefaultListableBeanFactory-父级类图-2003.12" style="zoom: 43%;" />
 
 `BeanFactory` 接口的扩展，由能够自动装配的 bean 工厂实现，前提是他们希望为现有的 bean 实例公开此功能。
 `BeanFactory` 的这个子接口并**不打算在正常的应用程序代码中使用**：对于典型的用例，请坚持使用 `BeanFactory` 或`org.springframework.beans.factory.ListableBeanFactory` 。
@@ -92,7 +92,7 @@ Spring 的 bean 定义读取器期望在这个接口的实现上工作。 Spring
 
 > `2004.02` 引入 `org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory`
 
-<img src="G:/文档工具/docsify/study-notes/编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/images/DefaultListableBeanFactory-父级类图-2004.02.png" alt="DefaultListableBeanFactory-父级类图-2004.02" style="zoom: 43%;" />
+<img src="images/DefaultListableBeanFactory-父级类图-2004.02.png" alt="DefaultListableBeanFactory-父级类图-2004.02" style="zoom: 43%;" />
 
 实现默认 bean 创建的抽象 bean 工厂超类，具有 `RootBeanDefinition` 类指定的全部功能。除了实现了 `AbstractBeanFactory` 的 `createBean` 方法外，还实现了 `AutowireCapableBeanFactory` 接口。
 提供 bean 创建（使用构造函数解析）、属性填充、装配（包括自动装配）和初始化。处理运行时 bean 引用、解析托管集合、调用初始化方法等。支持自动装配构造函数、按名称的属性和按类型的属性。
@@ -105,7 +105,7 @@ Spring 的 bean 定义读取器期望在这个接口的实现上工作。 Spring
 
 > `2.0` 引入
 
-<img src="G:/文档工具/docsify/study-notes/编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/images/DefaultListableBeanFactory-父级类图-2.0.png" alt="DefaultListableBeanFactory-父级类图-2.0" style="zoom: 43%;" />
+<img src="images/DefaultListableBeanFactory-父级类图-2.0.png" alt="DefaultListableBeanFactory-父级类图-2.0" style="zoom: 43%;" />
 
 > `org.springframework.beans.factory.config.SingletonBeanRegistry`
 
@@ -128,11 +128,11 @@ Spring 的 bean 定义读取器期望在这个接口的实现上工作。 Spring
 需要处理 `FactoryBean` 实例的单例注册表的支持基类，与 `DefaultSingletonBeanRegistry` 的单例管理集成。
 作为 `AbstractBeanFactory` 的基类。
 
-![DefaultListableBeanFactory-父级类图-2.5.1](G:/文档工具/docsify/study-notes/编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/images/DefaultListableBeanFactory-父级类图-2.5.1.png)
+![DefaultListableBeanFactory-父级类图-2.5.1](images/DefaultListableBeanFactory-父级类图-2.5.1.png)
 
 #### 别名功能
 
 > `2.5.2` 引入 `org.springframework.core.AliasRegistry` 和 `org.springframework.core.SimpleAliasRegistry`
 
-![DefaultListableBeanFactory-父级类图-2.5.2](G:/文档工具/docsify/study-notes/编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/images/DefaultListableBeanFactory-父级类图-2.5.2.png)
+![DefaultListableBeanFactory-父级类图-2.5.2](images/DefaultListableBeanFactory-父级类图-2.5.2.png)
 
