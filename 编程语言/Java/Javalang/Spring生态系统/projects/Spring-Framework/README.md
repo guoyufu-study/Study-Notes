@@ -16,7 +16,7 @@ Spring 的一个关键元素是应用程序级别的基础设施支持：Spring 
 
 ## 功能：
 
-* [核心技术](编程语言/Java/Javalang/Spring生态系统/projects/Spring-Framework/core.md)：dependency injection, events, resources, i18n, validation, data binding, type conversion, SpEL, AOP
+* [核心技术](编程语言/Java/Javalang/Spring生态系统/projects/Spring-Framework/core.md)：dependency injection, events, resources, i18n, validation, data binding, type conversion, [SpEL](编程语言/Java/Javalang/Spring生态系统/projects/Spring-Framework/expressions.md), AOP
 * [测试](编程语言/Java/Javalang/Spring生态系统/projects/Spring-Framework/testing.md)：mock objects, TestContext framework, Spring MVC Test, `WebTestClient`
 * 数据访问
 * [Spring Servlet](编程语言/Java/Javalang/Spring生态系统/projects/Spring-Framework/web.md)：Spring MVC, WebSocket, SockJS, STOMP Messaging
