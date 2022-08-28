@@ -2,11 +2,11 @@
 
 ## 准备工作
 
-使用 IDAE 新建项目。
+使用 IDAE 新建项目 `cn.jasper.springframework.beans:handprinted-spring-beans`。
 
 引入 `org.springframework:spring-core:5.3.22` JAR 包。
 
-在 `src/main/java` 目录下，创建 `cn.jasper.spring.beans` 包。
+在 `src/main/java` 目录下，创建 `cn.jasper.springframework.beans` 包。
 
 ### 具体流程
 
@@ -19,7 +19,7 @@
  */
 @NonNullApi
 @NonNullFields
-package cn.jasper.spring.beans;
+package cn.jasper.springframework.beans;
 
 import org.springframework.lang.NonNullApi;
 import org.springframework.lang.NonNullFields;
@@ -32,7 +32,7 @@ import org.springframework.lang.NonNullFields;
 beans 包和子包中抛出的所有异常都实现这个抽象类。请注意，这是一个运行时（未经检查的）异常。 Beans 异常通常是致命的；没有理由对它们进行检查。
 
 ``` java
-package cn.jasper.spring.beans;
+package cn.jasper.springframework.beans;
 
 public abstract class BeansException extends NestedRuntimeException {
 
@@ -45,6 +45,14 @@ public abstract class BeansException extends NestedRuntimeException {
     }
 }
 ```
+
+
+
+创建 `BeanFactory` 接口，声明 `getBean` 方法。
+
+
+
+
 
 #### beans
 

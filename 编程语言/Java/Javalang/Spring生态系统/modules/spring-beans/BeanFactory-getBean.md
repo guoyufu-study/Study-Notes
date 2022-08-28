@@ -4,7 +4,9 @@
 
 ### 声明
 
-> 在 `org.springframework.beans.factory.BeanFactory` 接口中声明了**获取 `Bean` 实例**的功能。
+在 `BeanFactory` 接口中声明了**获取 `Bean` 实例**的功能。
+
+> `org.springframework.beans.factory.BeanFactory` 
 
 ![org.springframework.beans.factory.BeanFactory-结构](images\beans.factory.BeanFactory-getBean-声明.png)
 
@@ -15,11 +17,15 @@
 
 ### 实现
 
-在 `org.springframework.beans.factory.support.AbstractBeanFactory` 抽象类中实现了**通过 `name` 获取 `Bean` 实例**功能
+在 `AbstractBeanFactory` 抽象类中实现了**通过 `name` 获取 `Bean` 实例**功能
+
+> `org.springframework.beans.factory.support.AbstractBeanFactory` 
 
 ![org.springframework.beans.factory.support.AbstractBeanFactory-getBean](images\beans.factory.support.AbstractBeanFactory-getBean-实现.png)
 
-在 `org.springframework.beans.factory.support.DefaultListableBeanFactory` 类中实现了**通过 `Class<T>` 获取 `Bean` 实例**功能。
+在 `DefaultListableBeanFactory` 类中实现了**通过 `Class<T>` 获取 `Bean` 实例**功能。
+
+> `org.springframework.beans.factory.support.DefaultListableBeanFactory` 
 
 ![org.springframework.beans.factory.support.DefaultListableBeanFactory-getBean](images\beans.factory.support.DefaultListableBeanFactory-getBean-实现.png)
 

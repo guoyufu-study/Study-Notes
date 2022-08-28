@@ -39,10 +39,10 @@ spring-beans 的依赖项：
   * [DefaultListableBeanFactory](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/DefaultListableBeanFactory.md)：Bean 工厂
   * [BeanDefinitionReader](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinitionReader.md)
     * [BeanDefinitionDocumentReader](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinitionDocumentReader.md)
-  * [getBean](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/getBean.md)：获取 `Bean` 实例。
+  * [getBean](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanFactory-getBean.md)：获取 `Bean` 实例。
   * [createBean](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/createBean.md)：创建 bean 实例
-* [别名注册表](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/AliasRegistry.md)：DAG，有向无环图
 * [单例注册表](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/SingletonBeanRegistry.md)：以统一的方式公开它们的单例管理设施
+* [别名注册表](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/AliasRegistry.md)：DAG，有向无环图
   * [规范 bean 名称](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/AbstractBeanFactory-transformedBeanName.md)
 
 [自动装配](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/自动装配功能.md)
