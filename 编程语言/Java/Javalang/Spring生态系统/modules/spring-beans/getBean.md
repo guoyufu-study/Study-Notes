@@ -1,31 +1,33 @@
 # getBean
 
-## 声明
+## 概述
+
+### 声明
 
 > 在 `org.springframework.beans.factory.BeanFactory` 接口中声明了**获取 `Bean` 实例**的功能。
 
-![org.springframework.beans.factory.BeanFactory-结构](images\org.springframework.beans.factory.BeanFactory-结构.png)
+![org.springframework.beans.factory.BeanFactory-结构](images\beans.factory.BeanFactory-getBean-声明.png)
 
 `BeanFactory` 接口中声明了两类获取 `Bean` 实例的方式：
 
 * 通过 `name` 获取 `Bean` 实例
 * 通过 `Class<T>` 获取 `Bean` 实例
 
-## 实现
+### 实现
 
 在 `org.springframework.beans.factory.support.AbstractBeanFactory` 抽象类中实现了**通过 `name` 获取 `Bean` 实例**功能
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-getBean](images\org.springframework.beans.factory.support.AbstractBeanFactory-getBean.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-getBean](images\beans.factory.support.AbstractBeanFactory-getBean-实现.png)
 
 在 `org.springframework.beans.factory.support.DefaultListableBeanFactory` 类中实现了**通过 `Class<T>` 获取 `Bean` 实例**功能。
 
-![org.springframework.beans.factory.support.DefaultListableBeanFactory-getBean](images\org.springframework.beans.factory.support.DefaultListableBeanFactory-getBean.png)
+![org.springframework.beans.factory.support.DefaultListableBeanFactory-getBean](images\beans.factory.support.DefaultListableBeanFactory-getBean-实现.png)
 
 ## 通过名称获取
 
 ### API 入口
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-getBean-代码](images\org.springframework.beans.factory.support.AbstractBeanFactory-getBean-代码.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-getBean-代码](images\beans.factory.support.AbstractBeanFactory-getBean-代码.png)
 
 ### 内部实现 doGetBean
 
@@ -35,7 +37,7 @@
 
 源代码如下：
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-01](images\org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-01.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-01](images\beans.factory.support.AbstractBeanFactory-doGetBean-01.png)
 
 参数说明：
 
@@ -59,15 +61,15 @@
 
 
 
+### 具体流程
+
+* [规范 bean 名称](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/AbstractBeanFactory-transformedBeanName.md)
 
 
-### 规范 bean 名称
-
-![org.springframework.beans.factory.support.AbstractBeanFactory-transformedBeanName](images\org.springframework.beans.factory.support.AbstractBeanFactory-transformedBeanName.png)
 
 ### 获取 Bean
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-02](images\org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-02.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-02](images\beans.factory.support.AbstractBeanFactory-doGetBean-02.png)
 
 从单例缓存中查找
 
@@ -84,7 +86,7 @@
 * 没有完整的单例锁的情况下，快速检查现有的实例。
 * 在完整的单例锁中一致地创建早期引用
 
-![org.springframework.beans.factory.support.DefaultSingletonBeanRegistry-getSingleton-代码](images\org.springframework.beans.factory.support.DefaultSingletonBeanRegistry-getSingleton-代码.png)
+![org.springframework.beans.factory.support.DefaultSingletonBeanRegistry-getSingleton-代码](images\beans.factory.support.DefaultSingletonBeanRegistry-getSingleton-代码.png)
 
 
 
@@ -92,7 +94,7 @@
 
 获取给定 bean 实例的对象，要么是 bean 实例本身，要么是其创建的对象（如果给定 bean 实例是 `FactoryBean`）。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance](images\org.springframework.beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance](images\beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance.png)
 
 按照名称是否有工厂解引用前缀 `&` 分两种情况：
 
@@ -103,7 +105,7 @@
 
 如果 bean 不是工厂，不要让调用代码尝试解引用工厂。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance-01](images\org.springframework.beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance-01.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance-01](images\beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance-01.png)
 
 
 
@@ -111,7 +113,7 @@
 
 现在我们有了 bean 实例，它可能是普通的 bean，也可能是 `FactoryBean`。如果它是一个 `FactoryBean`，我们使用它来创建一个 bean 实例，除非调用者实际上想要一个对工厂的引用。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance-02](images\org.springframework.beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance-02.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance-02](images\beans.factory.support.AbstractBeanFactory-getObjectForBeanInstance-02.png)
 
 #### 分情况讨论
 
@@ -121,7 +123,7 @@
 
 如果发现循环引用原型，抛异常。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-03-原型循环引用](images\org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-03-原型循环引用.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-03-原型循环引用](images\beans.factory.support.AbstractBeanFactory-doGetBean-03-原型循环引用.png)
 
 `prototypesCurrentlyInCreation`  是一个 线程本地变量。存储当前正在创建的 bean 的名称。
 
@@ -132,15 +134,15 @@ private final ThreadLocal<Object> prototypesCurrentlyInCreation =
 
 创建非单例 bean 前，会向 `prototypesCurrentlyInCreation` 中添加记录。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-beforePrototypeCreation](images\org.springframework.beans.factory.support.AbstractBeanFactory-beforePrototypeCreation.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-beforePrototypeCreation](images\beans.factory.support.AbstractBeanFactory-beforePrototypeCreation.png)
 
 创建非单例 bean 完成后，会从 `prototypesCurrentlyInCreation` 中移除记录。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-afterPrototypeCreation](images\org.springframework.beans.factory.support.AbstractBeanFactory-afterPrototypeCreation.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-afterPrototypeCreation](images\beans.factory.support.AbstractBeanFactory-afterPrototypeCreation.png)
 
 判断当前线程中，指定的非单例 bean 是否正在创建中。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-isPrototypeCurrentlyInCreation](images\org.springframework.beans.factory.support.AbstractBeanFactory-isPrototypeCurrentlyInCreation.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-isPrototypeCurrentlyInCreation](images\beans.factory.support.AbstractBeanFactory-isPrototypeCurrentlyInCreation.png)
 
 
 
@@ -148,7 +150,7 @@ private final ThreadLocal<Object> prototypesCurrentlyInCreation =
 
 如果存在父级 `BeanFactory`，并且在当前 `BeanFactory` 中没有找到指定 bean 定义，则委托父级 `BeanFactory` 
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-03-委托父级BF](images\org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-03-委托父级BF.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-03-委托父级BF](images\beans.factory.support.AbstractBeanFactory-doGetBean-03-委托父级BF.png)
 
 
 
@@ -163,13 +165,13 @@ private final ThreadLocal<Object> prototypesCurrentlyInCreation =
   * 原型
   * 其他作用域
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation](images\org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation](images\beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation.png)
 
 ###### 转换 bean 定义
 
 返回一个合并的 `RootBeanDefinition`，如果指定的 bean 对应于子 bean 定义，则遍历父 bean 定义。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-getMergedLocalBeanDefinition](images\org.springframework.beans.factory.support.AbstractBeanFactory-getMergedLocalBeanDefinition.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-getMergedLocalBeanDefinition](images\beans.factory.support.AbstractBeanFactory-getMergedLocalBeanDefinition.png)
 
 > 如果 bean 定义不存在，会在调用 `getBeanDefinition()` 方法时，抛出 `NoSuchBeanDefinitionException` 异常。
 
@@ -183,14 +185,14 @@ private final Map<String, RootBeanDefinition> mergedBeanDefinitions = new Concur
 
 > 使用全锁进行检查，以强制执行相同的合并实例。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition](images\org.springframework.beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition](images\beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition.png)
 
 两类 bean 定义：
 
 * 根 bean 定义：使用给定根 bean 定义的副本。
 * 子 bean 定义：需要与父合并。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition-01](images\org.springframework.beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition-01.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition-01](images\beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition-01.png)
 
 如果之前没有配置作用域，设置默认的单例作用域。
 
@@ -198,17 +200,17 @@ private final Map<String, RootBeanDefinition> mergedBeanDefinitions = new Concur
 
 暂时缓存合并的 bean 定义（为了获得元数据的变更，以后仍然可能重新合并）
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition-02](images\org.springframework.beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition-02.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition-02](images\beans.factory.support.AbstractBeanFactory-getMergedBeanDefinition-02.png)
 
 ###### 检查合并后的 bean 定义
 
 检查给定的合并 bean 定义，可能会引发验证异常。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-checkMergedBeanDefinition](images\org.springframework.beans.factory.support.AbstractBeanFactory-checkMergedBeanDefinition.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-checkMergedBeanDefinition](images\beans.factory.support.AbstractBeanFactory-checkMergedBeanDefinition.png)
 
 ###### 递归实例化依赖的 bean
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-dependson](images\org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-dependson.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-dependson](images\beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-dependson.png)
 
 ###### 单例
 
@@ -218,11 +220,11 @@ private final Map<String, RootBeanDefinition> mergedBeanDefinitions = new Concur
 
 ###### 原型
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-prototype](images\org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-prototype.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-prototype](images\beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-prototype.png)
 
 ###### 其它作用域
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-scope](images\org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-scope.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-scope](images\beans.factory.support.AbstractBeanFactory-doGetBean-04-beanCreation-scope.png)
 
 
 
@@ -233,7 +235,7 @@ private final Map<String, RootBeanDefinition> mergedBeanDefinitions = new Concur
 * 不匹配，使用转换器转换。
 * 匹配，直接强转。
 
-![org.springframework.beans.factory.support.AbstractBeanFactory-adaptBeanInstance](images\org.springframework.beans.factory.support.AbstractBeanFactory-adaptBeanInstance.png)
+![org.springframework.beans.factory.support.AbstractBeanFactory-adaptBeanInstance](images\beans.factory.support.AbstractBeanFactory-adaptBeanInstance.png)
 
 
 
@@ -245,7 +247,7 @@ private final Map<String, RootBeanDefinition> mergedBeanDefinitions = new Concur
 
 ## 通过类型获取
 
-![org.springframework.beans.factory.support.DefaultListableBeanFactory-getBean-代码](images\org.springframework.beans.factory.support.DefaultListableBeanFactory-getBean-代码.png)
+![org.springframework.beans.factory.support.DefaultListableBeanFactory-getBean-代码](images\beans.factory.support.DefaultListableBeanFactory-getBean-代码.png)
 
 
 

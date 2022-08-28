@@ -37,7 +37,13 @@ spring-beans 的依赖项：
 
 * [BeanFactory](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanFactory.md)：Bean 工厂
   * [DefaultListableBeanFactory](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/DefaultListableBeanFactory.md)：Bean 工厂
-* [getBean](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/getBean.md)：获取 `Bean` 实例。
+  * [BeanDefinitionReader](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinitionReader.md)
+    * [BeanDefinitionDocumentReader](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinitionDocumentReader.md)
+  * [getBean](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/getBean.md)：获取 `Bean` 实例。
+  * [createBean](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/createBean.md)：创建 bean 实例
+* [别名注册表](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/AliasRegistry.md)：DAG，有向无环图
+* [单例注册表](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/SingletonBeanRegistry.md)：以统一的方式公开它们的单例管理设施
+  * [规范 bean 名称](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/AbstractBeanFactory-transformedBeanName.md)
 
 [自动装配](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/自动装配功能.md)
 
@@ -45,10 +51,12 @@ spring-beans 的依赖项：
 
 [实例化策略](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/InstantiationStrategy.md)
 
+[自定义编辑器配置器](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/CustomEditorConfigurer.md)
+
+[后处理](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanPostProcessor.md)
+
 ### bean 定义
 
 [bean 定义](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinition.md)
-
-[bean 定义读取器](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinitionReader.md)
 
 [bean 元数据元素](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinitionReader.md)
