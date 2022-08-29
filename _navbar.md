@@ -13,6 +13,9 @@
   * 算法方向
   * 测试方向
 * [算法初识](算法初识/)
+* [设计原则](design-philosophy/)
+  * [设计模式](design-philosophy/design-pattern/)
+  * 代码重构
 * [运行维护](运行维护/)
   * [VMware](运行维护/VMware/)
   * [Hyper-V](运行维护/Hyper-V/)
