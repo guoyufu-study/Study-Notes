@@ -45,6 +45,8 @@ spring-beans 的依赖项：
 * [别名注册表](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/AliasRegistry.md)：DAG，有向无环图
   * [规范 bean 名称](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/AbstractBeanFactory-transformedBeanName.md)
 
+[属性加载功能](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/属性加载功能.md)
+
 [自动装配](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/自动装配功能.md)
 
 [生成 bean 名称](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanNameGenerator.md)

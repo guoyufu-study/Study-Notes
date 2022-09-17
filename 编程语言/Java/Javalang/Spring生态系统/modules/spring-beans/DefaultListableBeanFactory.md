@@ -72,8 +72,8 @@ Spring 的 `ConfigurableListableBeanFactory` 和 `BeanDefinitionRegistry` 接口
 
 > `org.springframework.beans.factory.config.ConfigurableBeanFactory`
 
-大多数 `BeanFactory` 要实现的配置接口。除了 `BeanFactory` 接口中的 `BeanFactory` **客户端方法**之外，还**提供了配置 `BeanFactory` 的工具**。
-这个 bean factory 接口并**不意味着在正常的应用程序代码中使用**：坚持使用 `BeanFactory` 或`org.springframework.beans.factory.ListableBeanFactory` 来满足典型需求。这个扩展接口只是为了**允许框架内部的即插即用**和**对 `BeanFactory` 配置方法的特殊访问**。
+大多数 `BeanFactory` 要实现的配置接口。除了 `BeanFactory` 接口中的 bean factory **客户端方法**之外，还**提供了配置 bean factory 的工具**。
+这个 bean factory 接口并**不意味着在正常的应用程序代码中使用**：坚持使用 `BeanFactory` 或`org.springframework.beans.factory.ListableBeanFactory` 来满足典型需求。这个扩展接口只是为了**允许框架内部的即插即用**和**对 bean factory 配置方法的特殊访问**。
 
 ##### `ConfigurableListableBeanFactory`
 
