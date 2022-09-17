@@ -29,7 +29,7 @@
 
 ##### `ListableBeanFactory`
 
-> ``2001.04.15` 引入 `org.springframework.beans.factory.ListableBeanFactory`
+> `2001.04.15` 引入 `org.springframework.beans.factory.ListableBeanFactory`
 
 `BeanFactory` 接口的扩展，由**可以枚举其所有 bean 实例**的 `BeanFactory` 实现，而不是按照客户的要求逐个尝试按名称查找 bean。**预加载所有 bean 定义**的 `BeanFactory` 实现（例如基于 XML 的工厂）可以实现此接口。
 如果这是 `HierarchicalBeanFactory` ，则返回值不会考虑任何 `BeanFactory` 层次结构，而只会与当前工厂中定义的 bean 相关。也可以使用 `BeanFactoryUtils` 辅助类来考虑祖先工厂中的 bean。
@@ -38,7 +38,7 @@
 
 ##### `DefaultListableBeanFactory`
 
->``2001.04.15` 引入 `org.springframework.beans.factory.support.DefaultListableBeanFactory`
+>`2001.04.15` 引入 `org.springframework.beans.factory.support.DefaultListableBeanFactory`
 
 Spring 的 `ConfigurableListableBeanFactory` 和 `BeanDefinitionRegistry` 接口的默认实现：一个基于 bean 定义元数据的成熟 `BeanFactory` ，可通过后处理器进行扩展。
 典型用法是**在访问 bean 之前先注册所有 bean 定义**（可能从 bean 定义文件中读取）。因此，按名称查找 Bean 是本地 bean 定义表中的一种廉价操作，它对预先解析的 bean 定义元数据对象进行操作。
