@@ -36,7 +36,9 @@ spring-beans 的依赖项：
 ### Bean Factory
 
 * [BeanFactory](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanFactory.md)：Bean 工厂
-  * [DefaultListableBeanFactory](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/DefaultListableBeanFactory.md)：Bean 工厂
+  * 实现类
+    * [DefaultListableBeanFactory](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/DefaultListableBeanFactory.md)：Bean 工厂
+    * [`ConfigurableBeanFactory`](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanFactory-ConfigurableBeanFactory.md)：提供 factory 配置功能
   * [BeanDefinitionReader](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinitionReader.md)
     * [BeanDefinitionDocumentReader](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanDefinitionDocumentReader.md)
   * [getBean](编程语言/Java/Javalang/Spring生态系统/modules/spring-beans/BeanFactory-getBean.md)：获取 `Bean` 实例。
