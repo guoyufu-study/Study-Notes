@@ -1,8 +1,10 @@
 # Gradle 用户手册
 
+> https://docs.gradle.org/current/userguide/userguide.html
+
 > 想了解顶级工程团队用来保持快速构建和高性能的技巧和窍门吗？[在此处注册](https://gradle.com/training/build-cache-deep-dive/?bid=docs-userguide)我们的构建缓存培训。
 
-Gradle 是一个开源构建自动化工具，专注于灵活性和性能。Gradle 构建脚本是使用 [Groovy](https://groovy-lang.org/) 或 [Kotlin](https://kotlinlang.org/) DSL 编写的。阅读 [Gradle 功能](https://gradle.org/features/) ，了解Gradle可以做什么。
+Gradle 是一个开源的自动化构建工具，专注于灵活性和性能。Gradle 构建脚本是使用 [Groovy](https://groovy-lang.org/) 或 [Kotlin](https://kotlinlang.org/) DSL 编写的。阅读 [Gradle 功能](https://gradle.org/features/) ，了解Gradle可以做什么。
 
 - **高度可定制**——Gradle 以最基本的方式可定制和可扩展的方式建模。
 - **快速**——Gradle 通过重用先前执行的输出、仅处理更改的输入以及并行执行任务来快速完成任务。
