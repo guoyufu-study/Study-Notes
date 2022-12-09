@@ -126,3 +126,99 @@ shutdown -r now
 mount -t vboxsf vm-share /mnt/vm-share
 ```
 
+### ssh 远程登录
+
+#### 安装服务器
+
+确保客户机安装 openssh 服务器和客户端。
+
+对于 ubuntu-22-04，命令如下：
+
+``` sh
+apt list openssh*
+```
+
+> 安装 `openssh-server` 和 `openssh-client`
+
+对于 CentOS-Stream-8，命令如下：
+
+``` shell
+dnf list openssh*
+```
+
+> 安装 `openssh-server` 和 `openssh-clients`。注意客户端软件有不同。
+
+#### 启动服务
+
+``` shell
+systemctl status sshd
+systemctl reload-or-restart sshd
+systemctl enable sshd
+```
+
+启动 sshd 服务，并设置开机自启动。
+
+#### 开放端口
+
+先明确 ip 地址，通过下面的命令查看：
+
+``` shell
+ip address
+```
+
+查看防火墙服务是否启用。
+
+对于 CentOS-Stream-8，命令如下：
+
+``` bash
+systemctl status firwared
+```
+
+对于 Ubuntu-22-04，命令如下：
+
+``` bash
+ufw status
+```
+
+如果启用了防火墙服务，需要开放端口。
+
+对于 Ubuntu-22-04，命令如下：
+
+``` bash
+ufw allow to 10.0.2.15 app openssh
+```
+
+#### 修改服务器配置
+
+```bash
+vim /etc/ssh/sshd_config
+```
+
+#### 添加授权公钥
+
+``` bash
+vim ~/.ssh/authorized_keys
+```
+
+> 注意：
+>
+> `.ssh` 目录的权限 `700`，`authorized_keys` 的权限 `600`，其他用户不能有写权限。
+
+#### 远程登录
+
+在 Windows 命令行窗口登录，输入以下命令：
+
+``` bash
+ssh -p 22 username@10.0.2.15
+```
+
+如果是 NAT 网络，则需要配置端口转发。
+
+![nat-port-forward](images\nat-port-forward.png)
+
+在 Windows 命令行窗口登录，输入以下命令：
+
+``` bash
+ssh -p 1022 username@10.0.2.15
+```
+
