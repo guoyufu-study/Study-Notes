@@ -26,6 +26,8 @@ Virtual Box 支持多种操作系统平台，提供了多种安装方式，包�
 
 GUI 操作客户机时，安装步骤很简单，在用户手册 `Guest Additions -> Installing and Maintaining Guest Additions` 中有描述，不赘述。
 
+#### 挂载镜像盘
+
 CUI 操作类 UNIX 客户机时，需要挂载 ISO 镜像盘。
 
 ``` shell
@@ -59,11 +61,23 @@ dr-xr-xr-x. 2 root root     2652 11月 22 23:24 OS2
 
 挂载成功。
 
-先安装一些前置软件包：
+#### 安装前置软件包
+
+先安装一些前置软件包。
+
+对于 CentOS Stream 8 需要安装：
 
 ``` shell
-dnf install tar bzip2 kernel-devel gcc make elfutils-libelf-devel
+dnf install tar bzip2 gcc make kernel-devel elfutils-libelf-devel
 ```
+
+对于 Ubuntu 22-04 需要安装：
+
+```
+apt install tar bzip2 gcc make linux-headers-generic libxt6 libxmu6
+```
+
+#### 运行安装
 
 由于客户机是 CentOS Linux 8，选择 `VBoxLinuxAdditions.run` 执行。
 
@@ -85,6 +99,8 @@ VirtualBox Guest Additions:   /sbin/rcvboxadd quicksetup all
 VirtualBox Guest Additions: Building the modules for kernel 4.18.0-348.7.1.el8_5.x86_64.
 VirtualBox Guest Additions: Running kernel modules will not be replaced until the system is restarted
 ```
+
+#### 重启系统
 
 最后一句，提示让重启系统。取消挂载，删除临时目录，重启系统：
 
