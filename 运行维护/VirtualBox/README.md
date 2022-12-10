@@ -65,13 +65,19 @@ dr-xr-xr-x. 2 root root     2652 11月 22 23:24 OS2
 
 先安装一些前置软件包。
 
-对于 CentOS Stream 8 需要安装：
+对于 CentOS-Stream-8 需要安装：
 
 ``` shell
 dnf install tar bzip2 gcc make kernel-devel elfutils-libelf-devel
 ```
 
-对于 Ubuntu 22-04 需要安装：
+> 可能还需要安装以下软件包
+>
+> ``` bash
+> dnf install libX11 libXt libXext libXmu
+> ```
+
+对于 Ubuntu-22-04 需要安装：
 
 ```
 apt install tar bzip2 gcc make linux-headers-generic libxt6 libxmu6
@@ -112,11 +118,11 @@ shutdown -r now
 
 
 
-### 实现共享文件夹
+### 实现共享目录
 
 在用户手册`Guest Additions -> Shared Folders`中有描述。
 
-> 实现共享文件夹功能前，需要先安装增强功能。
+> 实现共享目录功能前，需要先安装增强功能。
 
 在 Virtual Box 管理器中选择目标客户机，点击 “设置 -> 共享文件夹 -> 添加共享文件夹”，按需设置，选择自动挂载即可。
 
@@ -219,6 +225,6 @@ ssh -p 22 username@10.0.2.15
 在 Windows 命令行窗口登录，输入以下命令：
 
 ``` bash
-ssh -p 1022 username@10.0.2.15
+ssh -p 1022 username@127.0.0.1
 ```
 
